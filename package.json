@@ -8,9 +8,10 @@
     "build-client": "cd src/client && webpack",
     "dev-client": "cd src/client && webpack-dev-server -w",
     "build-server": "tsc -p ./src/server",
-    "build-server:w": "tsc -p ./src/server -w",
-    "start-server:w": "nodemon -w ./dist/server ./dist/server/server.js --delay 1",
-    "dev-server": "npm run build-server && concurrently \"npm run build-server:w\" \"npm run start-server:w\""
+    "build-server:w": "tscw -p ./src/server",
+    "start-server": "node ./dist/server/server.js",
+    "restart-server": "node ./dist/server/server.js",
+    "dev-server": "tscw -p ./src/server --onFirstSuccess \"npm run start-server\" --onSuccess \"npm run restart-server\""
   },
   "keywords": [
     "typescript",
