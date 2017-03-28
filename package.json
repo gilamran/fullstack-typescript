@@ -1,0 +1,47 @@
+{
+  "name": "fullstack-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build-client": "cd src/client && webpack",
+    "dev-client": "cd src/client && webpack-dev-server -w",
+    "build-server": "tsc -p ./src/server",
+    "build-server:w": "tsc -p ./src/server -w",
+    "start-server:w": "nodemon -w ./dist/server ./dist/server/server.js --delay 1",
+    "dev-server": "npm run build-server && concurrently \"npm run build-server:w\" \"npm run start-server:w\""
+  },
+  "keywords": [
+    "typescript",
+    "fullstack",
+    "express",
+    "express4",
+    "node"
+  ],
+  "author": "Gil Amran",
+  "devDependencies": {
+    "@types/express": "^4.0.35",
+    "@types/history": "^4.5.0",
+    "@types/node": "^7.0.11",
+    "@types/react-router": "^4.0.1",
+    "@types/react-router-dom": "^4.0.1",
+    "awesome-typescript-loader": "^3.1.2",
+    "html-webpack-plugin": "^2.28.0",
+    "nodemon": "^1.11.0",
+    "rimraf": "^2.6.1",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.2.1",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  },
+  "dependencies": {
+    "concurrently": "^3.4.0",
+    "express": "^4.15.2",
+    "history": "^4.6.1",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^4.0.0",
+    "react-router-dom": "^4.0.0"
+  }
+}
