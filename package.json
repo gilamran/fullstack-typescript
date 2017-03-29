@@ -9,9 +9,7 @@
     "dev-client": "cd src/client && webpack-dev-server -w",
     "build-server": "tsc -p ./src/server",
     "build-server:w": "tscw -p ./src/server",
-    "start-server": "node ./dist/server/server.js",
-    "restart-server": "node ./dist/server/server.js",
-    "dev-server": "tscw -p ./src/server --onFirstSuccess \"npm run start-server\" --onSuccess \"npm run restart-server\""
+    "dev-server": "node tscw -p ./src/server --onSuccess \"node ./dist/server/server.js\""
   },
   "keywords": [
     "typescript",

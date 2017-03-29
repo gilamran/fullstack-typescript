@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict';
 
 const chalk = require('chalk');
@@ -14,6 +15,8 @@ const newAdditionToSyntax = ['Watch input files. [always on]', onSuccessCommandS
 
 let hadErrors = false;
 let firstTime = true;
+let firstSuccessProcess = null;
+let successProcess = null;
 
 function color(line) {
   if (typescriptErrorRegex.test(line)) {
@@ -42,19 +45,35 @@ function cleanArgs(inputArgs) {
 
 function getCommandIdx(inputArgs, command) {
   const idx = inputArgs.indexOf(command);
-  if (idx > -1 && idx+1<inputArgs.length) {
+  if (idx > -1 && idx + 1 < inputArgs.length) {
     return idx;
   } else {
     return -1;
   }
 }
 
+function runCommand(fullCommand) {
+  const parts = fullCommand.split(' ').filter(a => a.length > 0);
+  return spawn(parts[0], parts.slice(1), {stdio: 'inherit'})
+}
+
+function killAllProcesses() {
+  if (firstSuccessProcess) {
+    firstSuccessProcess.kill();
+    firstSuccessProcess = null;
+  }
+
+  if (successProcess) {
+    successProcess.kill();
+    successProcess = null;
+  }
+}
 let allArgs = process.argv;
 // onSuccess
 let onSuccessCommandIdx = getCommandIdx(allArgs, '--onSuccess');
 let onSuccessCommand = null;
 if (onSuccessCommandIdx > -1) {
-  onSuccessCommand = allArgs[onSuccessCommandIdx+1];
+  onSuccessCommand = allArgs[onSuccessCommandIdx + 1];
   allArgs.splice(onSuccessCommandIdx, 2)
 }
 
@@ -62,19 +81,21 @@ if (onSuccessCommandIdx > -1) {
 let onFirstSuccessCommandIdx = getCommandIdx(allArgs, '--onFirstSuccess');
 let onFirstSuccessCommand = null;
 if (onFirstSuccessCommandIdx > -1) {
-  onFirstSuccessCommand = allArgs[onFirstSuccessCommandIdx+1];
+  onFirstSuccessCommand = allArgs[onFirstSuccessCommandIdx + 1];
   allArgs.splice(onFirstSuccessCommandIdx, 2)
 }
 
 let args = cleanArgs(allArgs);
 args.push('--watch'); // force watch
 
-const bin = require.resolve('./node_modules/typescript/bin/tsc');
-const child = spawn(bin, [...args]);
+const bin = require.resolve('typescript/bin/tsc');
+const tscProcess = spawn(bin, [...args]);
 
-child.stdout.on('data', buffer => {
+tscProcess.stdout.on('data', buffer => {
   const lines = buffer.toString()
     .split('\n')
+    .filter(a => a.length > 0)
+    // .filter(a => a !== '\r')
     .map(a => a.replace(typescriptWatchCommandRegex, newAdditionToSyntax));
 
   print(lines);
@@ -94,19 +115,15 @@ child.stdout.on('data', buffer => {
     if (hadErrors) {
       console.log('Had errors, not spawning');
     } else {
+      killAllProcesses();
       if (firstTime && onFirstSuccessCommand) {
         firstTime = false;
-        console.log(`SPAWN on First Success: "${onFirstSuccessCommand}"`);
+        firstSuccessProcess = runCommand(onFirstSuccessCommand);
       } else {
-        console.log(`SPAWN on Success: "${onSuccessCommand}"`);
+        successProcess = runCommand(onSuccessCommand);
       }
     }
   }
 });
 
-child.on('exit', code => {
-  if (code !== 0) {
-    // kill all the processes?
-    console.log(`process exit with error code ${code}`);
-  }
-});
+tscProcess.on('exit', killAllProcesses);
