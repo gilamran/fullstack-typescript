@@ -8,15 +8,15 @@
 * React
 * React router v4
 
+#### How is works:
+* Separated `tsconfig.json` for client and server.
+* Client is bundled using Webpack, server is emitted by TypeScript.
+* Client and server can share code (And types). For example: Validation.ts, IUserDTO.d.ts
+
 #### Usage:
 * `npm run dev` - Client and server are in watch mode with source maps
 * `npm run build` - `dist` folder will include all the needed files, both client (Bundle) and server.
 * `npm start` - Just runs `node ./dist/server`  
-
-#### Notes:
-* Separated `tsconfig.json` for client and server.
-* Client is bundled using Webpack, server is emitted by TypeScript.
-* Client and server can share code (And types). For example: Validation.ts, IUserDTO.d.ts
 
 ---
 
