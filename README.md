@@ -6,7 +6,7 @@
 
 
 #### What's included
-* TypeScript (With Source maps)
+* TypeScript
 * React
 * React router v4
 
@@ -42,7 +42,9 @@
  
 * client
   * call the server api
-  * static files  
+  * static files
+  * use tslib
+  * polyfills? (For Object.assign and Promise)
   
 * server
   * Currently is using static html, let webpack generate the html out of a template
