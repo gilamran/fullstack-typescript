@@ -4,19 +4,19 @@
 
 
 #### What's included
-* TypeScript
+* Client & Server in TypeScript
 * React
 * React router v4
 
 #### Usage:
-* `npm run dev` - Server and client are in watch mode with source maps
+* `npm run dev` - Client and server are in watch mode with source maps
 * `npm run build` - `dist` folder will include all the needed files, both client (Bundle) and server.
 * `npm start` - Just runs `node ./dist/server`  
 
 #### Notes:
-* Separated `tsconfig.json` for server and client.
-* Server is emitted by TypeScript, client is bundled using Webpack.
-* Server and client can share code (And types). For example: Validation.ts, IUserDTO.d.ts
+* Separated `tsconfig.json` for client and server.
+* Client is bundled using Webpack, server is emitted by TypeScript.
+* Client and server can share code (And types). For example: Validation.ts, IUserDTO.d.ts
 
 ---
 
