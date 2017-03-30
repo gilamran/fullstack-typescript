@@ -1,16 +1,17 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 
 const production = false;
+const projectRoot = path.join(__dirname, '..', '..', '..');
 
 module.exports = {
   devtool: 'inline-source-map',
-  entry: [
-    './client'
-  ],
+  entry: {
+    main: './client'
+  },
   output: {
-    path: path.join(__dirname, '..', '..', '..', 'dist', 'public'),
-    filename: 'client-bundle.js',
+    path: path.join(projectRoot, 'dist', 'public'),
+    filename: '[name]-bundle.js',
     publicPath: production ? '/public/' : 'http://localhost:8080/public/'
   },
   resolve: {
@@ -22,5 +23,10 @@ module.exports = {
       loaders: ['awesome-typescript-loader']
     }]
   },
-  plugins: [new HtmlWebpackPlugin()]
+  plugins: [
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: ({ resource }) => /node_modules/.test(resource),
+    })
+  ]
 };

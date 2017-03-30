@@ -13,7 +13,8 @@ const page = `<!doctype html>
     <div class="container">
         <div id="app">Loading...</div>
     </div>
-    <script type="text/javascript" src="${staticsServer}/public/client-bundle.js"></script>
+    <script type="text/javascript" src="${staticsServer}/public/vendor-bundle.js"></script>
+    <script type="text/javascript" src="${staticsServer}/public/main-bundle.js"></script>
 </body>
 </html>`;
 
