@@ -25,12 +25,17 @@
 ##### Requirements
 * Node 6.9.5+
 
+
+
+
+---
 ### todo
 * More docs
 * example for shared code
+* tslint?
+* favicon
 
 * client
-  * vendor bundle
   * add nav bar
   * add react router
   * call the server api
