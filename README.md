@@ -39,7 +39,6 @@
 ---
 ##### todo
 * More docs
-* example for shared code
 * open the browser on the first compilation
 * production configuration on webpack.config.js
 * tslint? (Only on pre-commit?)

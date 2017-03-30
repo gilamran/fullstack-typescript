@@ -5,6 +5,7 @@
     "module": "commonjs",
     "importHelpers": true,
     "outDir": "../../dist/client",
+    "lib": ["es2015", "dom"],
     "jsx": "react"
   },
   "files": [

@@ -1,4 +1,5 @@
 export interface IUserDTO {
     userId: string;
-    username: string;
+    userName: string;
+    imageUrl: 'http://localhost/test.jpg'
 }
