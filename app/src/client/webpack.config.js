@@ -6,7 +6,7 @@ const production = false;
 const projectRoot = path.join(__dirname, '..', '..', '..');
 
 module.exports = {
-  devtool: 'inline-source-map',
+  devtool: production ? '' : 'inline-source-map',
   entry: {
     main: './client'
   },
@@ -27,7 +27,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
-      minChunks: ({ resource }) => /node_modules/.test(resource),
+      minChunks: ({resource}) => /node_modules/.test(resource),
     })
   ]
 };

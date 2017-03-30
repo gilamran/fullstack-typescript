@@ -9,7 +9,7 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "node ./dist/server/server.js",
-    "build-client": "cd ./app/src/client && webpack",
+    "build-client": "cd ./app/src/client && webpack -p",
     "dev-client": "cd ./app/src/client && webpack-dev-server -w",
     "build-server": "tsc -p ./app/src/server",
     "dev-server": "tsc-watch -p ./app/src/server --onSuccess \"node ./dist/server/server.js\"",
