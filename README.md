@@ -41,3 +41,5 @@
   * call the server api
   * static files  
   
+* server
+  * ejs
