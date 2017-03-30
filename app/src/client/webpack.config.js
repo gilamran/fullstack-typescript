@@ -1,15 +1,17 @@
-var path = require('path');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+const production = false;
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'inline-source-map',
   entry: [
     './client'
   ],
   output: {
-    path: path.join(__dirname, '..', '..', 'dist', 'public'),
+    path: path.join(__dirname, '..', '..', '..', 'dist', 'public'),
     filename: 'client-bundle.js',
-    publicPath: '/public/'
+    publicPath: production ? '/public/' : 'http://localhost:8080/public/'
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx']

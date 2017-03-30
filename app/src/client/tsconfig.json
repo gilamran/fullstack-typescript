@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "sourceMap": true,
     "module": "commonjs",
-    "outDir": "../../dist/client",
+    "outDir": "../../../dist/client",
     "jsx": "react"
   },
   "files": [
