@@ -31,6 +31,7 @@
 ---
 ### todo
 * More docs
+* test bundling
 * example for shared code
 * tslint?
 * favicon
@@ -40,7 +41,4 @@
   * add react router
   * call the server api
   * static files  
-  
-* server
-  * body parser
   

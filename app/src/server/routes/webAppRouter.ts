@@ -1,6 +1,7 @@
 import { Router } from 'express';
 
 const staticsServer = 'http://localhost:8080';
+const version = require('../../../package.json').version;
 
 const page = `<!doctype html>
 <html lang="en">
@@ -13,8 +14,8 @@ const page = `<!doctype html>
     <div class="container">
         <div id="app">Loading...</div>
     </div>
-    <script type="text/javascript" src="${staticsServer}/public/vendor-bundle.js"></script>
-    <script type="text/javascript" src="${staticsServer}/public/main-bundle.js"></script>
+    <script type="text/javascript" src="${staticsServer}/public/vendor-${version}-bundle.js"></script>
+    <script type="text/javascript" src="${staticsServer}/public/main-${version}-bundle.js"></script>
 </body>
 </html>`;
 

@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const version = require('../../../package.json').version;
 
 const production = false;
 const projectRoot = path.join(__dirname, '..', '..', '..');
@@ -11,7 +12,7 @@ module.exports = {
   },
   output: {
     path: path.join(projectRoot, 'dist', 'public'),
-    filename: '[name]-bundle.js',
+    filename: `[name]-${version}-bundle.js`,
     publicPath: production ? '/public/' : 'http://localhost:8080/public/'
   },
   resolve: {
