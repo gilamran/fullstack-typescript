@@ -1,22 +1,22 @@
-### FullStack TypeScript, React starter kit.
+## FAST FullStack TypeScript with React starter kit.
 
 ---
 
 
-##### What's included
+#### What's included
 * TypeScript
 * React
 * React router v4
 
-##### Usage:
+#### Usage:
 * `npm run dev` - Server and client are in watch mode with source maps
 * `npm run build` - `dist` folder will include all the needed files, both client (Bundle) and server.
 * `npm start` - Just runs `node ./dist/server`  
 
-##### Notes:
+#### Notes:
 * Separated `tsconfig.json` for server and client.
 * Server is emitted by TypeScript, client is bundled using Webpack.
-* Server can client can share code (And types). For example: Validation.ts, IUserDTO.d.ts
+* Server and client can share code (And types). For example: Validation.ts, IUserDTO.d.ts
 
 ---
 
