@@ -37,7 +37,7 @@
 
 
 ---
-### todo
+##### todo
 * More docs
 * example for shared code
 * open the browser on the first compilation
@@ -48,7 +48,6 @@
 * client
   * call the server api
   * static files
-  * use tslib
   * polyfills? (For Object.assign and Promise)
   
 * server
@@ -56,3 +55,6 @@
   * The server is is using /dist/public, for statics... what can we do here?
   * favicon
   * refresh the browser after server compilation success
+
+##### Licence
+This code is released as is, under MIT licence. Feel free to use it for free for both commercial and private projects. No warranty provided.

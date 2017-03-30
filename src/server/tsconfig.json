@@ -3,6 +3,7 @@
     "target": "es6",
     "sourceMap": true,
     "module": "commonjs",
+    "importHelpers": true,
     "outDir": "../../dist/server",
     "types": ["node"]
   },
