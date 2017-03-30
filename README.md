@@ -14,7 +14,7 @@
 * Client and server can share code (And types). For example: Validation.ts, IUserDTO.d.ts
 
 #### Usage:
-* `npm run dev` - Client and server are in watch mode with source maps
+* `npm run dev` - Client and server are in watch mode with source maps, opens [http://localhost:3000](http://localhost:3000)
 * `npm run build` - `dist` folder will include all the needed files, both client (Bundle) and server.
 * `npm start` - Just runs `node ./dist/server`  
 
@@ -40,6 +40,7 @@
 ### todo
 * More docs
 * example for shared code
+* open the browser on the first compilation
 * tslint? (Only on pre-commit?)
 * minify on build?
  

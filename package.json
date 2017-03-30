@@ -9,10 +9,10 @@
   "scripts": {
     "clean": "rimraf dist",
     "start": "node ./dist/server/server.js",
-    "build-client": "cd ./app/src/client && webpack -p",
-    "dev-client": "cd ./app/src/client && webpack-dev-server -w",
-    "build-server": "tsc -p ./app/src/server",
-    "dev-server": "tsc-watch -p ./app/src/server --onSuccess \"node ./dist/server/server.js\"",
+    "build-client": "cd ./src/client && webpack -p",
+    "dev-client": "cd ./src/client && webpack-dev-server -w",
+    "build-server": "tsc -p ./src/server",
+    "dev-server": "tsc-watch -p ./src/server --onSuccess \"node ./dist/server/server.js\"",
     "dev": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run dev-server\" \"npm run dev-client\"",
     "build": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run build-server\" \"npm run build-client\""
   },
