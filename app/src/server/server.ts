@@ -6,7 +6,7 @@ const app = express();
 
 app.use('/public', express.static('dist/public'));
 
-app.use('/', webAppRouter());
+app.use('/**', webAppRouter());
 app.use('/api', apiRouter());
 
 const port = process.env.PORT || 3000;

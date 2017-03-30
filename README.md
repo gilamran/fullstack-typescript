@@ -41,8 +41,6 @@
 * minify on build?
  
 * client
-  * add react router
-  * add nav bar
   * call the server api
   * static files  
   
@@ -50,3 +48,4 @@
   * Currently is using static html, let webpack generate the html out of a template
   * The server is is using /dist/public, for statics... what can we do here?
   * favicon
+  * refresh the browser after server compilation success
