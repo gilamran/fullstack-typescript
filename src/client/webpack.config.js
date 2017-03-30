@@ -1,9 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
-const version = require('../../../package.json').version;
+const version = require('../../package.json').version;
 
 const production = false;
-const projectRoot = path.join(__dirname, '..', '..', '..');
+const projectRoot = path.join(__dirname, '..', '..');
 
 module.exports = {
   devtool: production ? '' : 'inline-source-map',
