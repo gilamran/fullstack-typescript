@@ -32,14 +32,16 @@
 ### todo
 * More docs
 * example for shared code
-* tslint?
-* favicon
-
+* tslint? (Only on pre-commit?)
+* minify on build?
+ 
 * client
-  * add nav bar
   * add react router
+  * add nav bar
   * call the server api
   * static files  
   
 * server
-  * ejs
+  * Currently is using static html, let webpack generate the html out of a template
+  * The server is is using /dist/public, for statics... what can we do here?
+  * favicon
