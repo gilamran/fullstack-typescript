@@ -2,30 +2,33 @@
 
 ---
 
-## Under development
 
-
-#### What's included
+##### What's included
 * TypeScript
 * React
 * React router v4
 
-
-#### What's not included
-* Babel (Not needed)
-* Universal
-* Redux [How to add]
-* Styling library [How to add]
+##### Usage:
+* `npm run dev` - Server and client are in watch mode with source maps
+* `npm run build` - `dist` folder will include all the needed files, both client (Bundle) and server.
+* `npm start` - Just runs `node ./dist/server`  
 
 ##### Notes:
 * Separated `tsconfig.json` for server and client.
 * Server is emitted by TypeScript, client is bundled using Webpack.
 * Server can client can share code (And types). For example: Validation.ts, IUserDTO.d.ts
 
-##### Usage:
-* `npm run dev` - Server and client are in watch mode with source maps
-* `npm build` - `dist` folder will include all the needed files, both client (Bundle) and server.
-* `npm start` - Just runs `node ./dist/server`  
+---
+
+##### Client Tree
+##### Server Tree
+
+---
+
+##### What's not included
+* Universal
+* Redux [How to add]
+* Styling library [How to add]
 
 ##### Requirements
 * Node 6.9.5+
