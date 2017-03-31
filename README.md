@@ -54,6 +54,7 @@
   * Minimal css
   
 * server
+  * dev/production mode for the webapp router
   * favicon
   * refresh the browser after server compilation success
 
