@@ -9,7 +9,7 @@ const projectRoot = path.join(__dirname, '..', '..');
 module.exports = {
   devtool: production ? '' : 'inline-source-map',
   entry: {
-    main: './client'
+    client: './client'
   },
   output: {
     path: path.join(projectRoot, 'dist', 'public'),
