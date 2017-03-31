@@ -3,18 +3,18 @@
 ---
 
 
-#### What's included
+### What's included
 * Client & Server in TypeScript
 * React
 * React router v4
 * Example api communication (Using Axios)
 
-#### How is works:
+### How is works:
 * Separated `tsconfig.json` for client and server.
 * Client is bundled using Webpack, server is emitted by TypeScript.
 * Client and server can share code (And types). For example: Validation.ts, IUserDTO.d.ts
 
-#### Usage:
+### Usage:
 * `npm run dev` - Client and server are in watch mode with source maps, opens [http://localhost:3000](http://localhost:3000)
 * `npm run build` - `dist` folder will include all the needed files, both client (Bundle) and server.
 * `npm start` - Just runs `node ./dist/server`  
