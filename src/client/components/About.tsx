@@ -1,11 +1,7 @@
 import * as React from 'react';
 
-export class About extends React.Component<any, any> {
-  render() {
-    return (
-      <div>
-        <h1>About component</h1>
-      </div>
-    )
-  }
-}
+export const About = () => (
+  <div>
+    <h1>You can find information <a href="http://github.com/gilamran/fullstack-typescript">here</a></h1>
+  </div>
+);

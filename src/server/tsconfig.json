@@ -5,6 +5,8 @@
     "module": "commonjs",
     "importHelpers": true,
     "outDir": "../../dist/server",
+    "lib": ["es6"],
+    "moduleResolution": "node",
     "types": ["node"]
   },
   "files": [

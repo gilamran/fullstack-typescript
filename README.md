@@ -7,6 +7,7 @@
 * Client & Server in TypeScript
 * React
 * React router v4
+* Example api communication (Using Axios)
 
 #### How is works:
 * Separated `tsconfig.json` for client and server.
@@ -45,7 +46,6 @@
 * minify on build?
  
 * client
-  * call the server api
   * static files
   * polyfills? (For Object.assign and Promise)
   

@@ -1,12 +1,7 @@
 import * as React from 'react';
-import {Link} from 'react-router-dom';
 
-export class Home extends React.Component<any, any> {
-  render() {
-    return (
-      <div>
-        <h1>Home component</h1>
-      </div>
-    )
-  }
-}
+export const Home = () => (
+  <div>
+    <h1>Welcome to the FAST FullStack TypeScript with React starter kit.</h1>
+  </div>
+);

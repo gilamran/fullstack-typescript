@@ -22,7 +22,7 @@ const page = `<!doctype html>
 export function webAppRouter() {
   const router = Router();
 
-  router.get('/', (req, res) => {
+  router.get('**', (req, res) => {
     // render the ejs
     res.send(page);
   });
