@@ -35,7 +35,7 @@
 * To get new version of static files, bump the version in your package.json
 
 ##### Requirements
-* Node 6.9.5+
+* Node 6+
 
 
 
@@ -44,7 +44,6 @@
 ##### todo
 * More docs
 * open the browser on the first compilation
-* production configuration on webpack.config.js
 * tslint? (Only on pre-commit?)
 * minify on build?
  
