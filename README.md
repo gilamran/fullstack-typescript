@@ -31,6 +31,9 @@
 * Redux [How to add]
 * Styling library [How to add]
 
+##### Notes
+* To get new version of static files, bump the version in your package.json
+
 ##### Requirements
 * Node 6.9.5+
 
@@ -48,9 +51,9 @@
 * client
   * static files
   * polyfills? (For Object.assign and Promise)
+  * Minimal css
   
 * server
-  * Currently is using static html, let webpack generate the html out of a template
   * The server is is using /dist/public, for statics... what can we do here?
   * favicon
   * refresh the browser after server compilation success
