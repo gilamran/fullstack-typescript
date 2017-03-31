@@ -49,12 +49,11 @@
 * minify on build?
  
 * client
-  * static files
+  * static files?
   * polyfills? (For Object.assign and Promise)
   * Minimal css
   
 * server
-  * The server is is using /dist/public, for statics... what can we do here?
   * favicon
   * refresh the browser after server compilation success
 
