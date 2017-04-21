@@ -39,16 +39,7 @@
 
 
 
-
 ---
-##### todo
- 
-* client
-  * static files?
-  * Minimal css
-  
-* server
-  * dev/production mode for the webapp router
 
 ##### Licence
 This code is released as is, under MIT licence. Feel free to use it for free for both commercial and private projects. No warranty provided.
