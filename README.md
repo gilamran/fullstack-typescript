@@ -9,6 +9,8 @@
 * The client is bundled using Webpack because it goes to the browser.
 * The server is emitted by TypeScript because node 6 support es6.
 
+<img src="https://github.com/gilamran/fullstack-typescript/raw/master/flow.png" width="150">
+
 
 ### What's included
 * Client & Server in TypeScript
