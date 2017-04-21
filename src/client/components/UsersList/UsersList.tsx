@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { Route, NavLink } from 'react-router-dom';
-import { IUserDTO } from '../../shared/IUserDTO';
-import { User } from './User';
-import { loadUsersAPI } from '../utils/api-facade';
+import { IUserDTO } from '../../../shared/IUserDTO';
+import { User } from '../User/User';
+import { loadUsersAPI } from '../../utils/api-facade';
+const css = require('./UsersList.css');
 
 type TState = {
   users: IUserDTO[],
@@ -33,7 +34,7 @@ export class UsersList extends React.Component<any, TState> {
     }
 
     return (
-      <div>
+      <div className={css.container}>
         <h1>UsersList component</h1>
         <ul>
           {this.state.users.map(user =>

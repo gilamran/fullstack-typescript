@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
+const css = require('./NavBar.css');
 
 export const NavBar = () => (
-  <ul>
+  <ul className={css.list}>
     <li>
       <NavLink activeClassName='active' exact to='/'>Home</NavLink>
     </li>

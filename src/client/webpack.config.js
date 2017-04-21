@@ -21,7 +21,7 @@ const plugins = [
 ];
 
 if (!config.IS_PRODUCTION) {
-  plugins.push(new OpenBrowserPlugin({ url: `http://localhost:${config.SERVER_PORT}` }));
+  plugins.push(new OpenBrowserPlugin({url: `http://localhost:${config.SERVER_PORT}`}));
 }
 
 module.exports = {
@@ -36,10 +36,29 @@ module.exports = {
     extensions: ['.js', '.ts', '.tsx']
   },
   module: {
-    loaders: [{
-      test: /\.tsx?$/,
-      loaders: ['awesome-typescript-loader']
-    }]
+    loaders: [
+      {
+        test: /\.tsx?$/,
+        use: 'awesome-typescript-loader'
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              camelCase: true,
+              sourceMap: !config.IS_PRODUCTION,
+              minimize: config.IS_PRODUCTION
+            }
+          }
+        ]
+      }
+    ]
   },
   plugins
 };

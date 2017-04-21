@@ -2,10 +2,10 @@ import * as React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 // Pages
-import { NavBar } from './components/NavBar';
-import { Home } from './components/Home';
-import { About } from './components/About';
-import { UsersList } from './components/UsersList';
+import { NavBar } from './components/NavBar/NavBar';
+import { Home } from './components/Home/Home';
+import { About } from './components/About/About';
+import { UsersList } from './components/UsersList/UsersList';
 
 export const App = () => (
   <BrowserRouter>
