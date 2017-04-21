@@ -42,10 +42,6 @@
 
 ---
 ##### todo
-* More docs
-* tslint? (Only on pre-commit?)
-* minify on build?
-* allow to config the server/client ports
  
 * client
   * static files?
@@ -53,8 +49,6 @@
   
 * server
   * dev/production mode for the webapp router
-  * favicon
-  * refresh the browser after server compilation success
 
 ##### Licence
 This code is released as is, under MIT licence. Feel free to use it for free for both commercial and private projects. No warranty provided.
