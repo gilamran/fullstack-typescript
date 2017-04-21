@@ -25,6 +25,7 @@
 ---
 
 ##### What's not included
+* Babel (Typescript can do it all)
 * Universal
 * Redux [How to add]
 * Styling library [How to add]
