@@ -4,7 +4,7 @@ const version = require('../../package.json').version;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
-const production = false;
+const production = process.env.NODE_ENV === 'production';
 const projectRoot = path.join(__dirname, '..', '..');
 
 module.exports = {

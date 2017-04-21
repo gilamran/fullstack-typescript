@@ -2,7 +2,7 @@ import * as path from 'path';
 import * as express from 'express';
 import { Router } from 'express';
 
-export function webAppRouter() {
+export function staticsRouter() {
   const router = Router();
   const publicPath = path.join(__dirname, '..', '..', 'public');
 
