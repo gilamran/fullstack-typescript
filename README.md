@@ -12,7 +12,7 @@
 ### How is works:
 * Separated `tsconfig.json` for client and server.
 * Client is bundled using Webpack, server is emitted by TypeScript.
-* Client and server can share code (And types). For example: Validation.ts, IUserDTO.d.ts
+* Client and server can share code (And types). For example: [IUserDTO.d.ts](https://github.com/gilamran/fullstack-typescript/blob/master/src/shared/IUserDTO.d.ts)
 
 ### Usage:
 * `npm run dev` - Client and server are in watch mode with source maps, opens [http://localhost:3000](http://localhost:3000)
