@@ -49,7 +49,6 @@
  
 * client
   * static files?
-  * polyfills? (For Object.assign and Promise)
   * Minimal css
   
 * server

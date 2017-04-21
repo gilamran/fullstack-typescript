@@ -8,9 +8,7 @@ const projectRoot = path.join(__dirname, '..', '..');
 
 module.exports = {
   devtool: production ? '' : 'inline-source-map',
-  entry: {
-    client: './client'
-  },
+  entry: ['babel-polyfill', './client'],
   output: {
     path: path.join(projectRoot, 'dist', 'public'),
     filename: `[name]-${version}-bundle.js`,
