@@ -3,8 +3,7 @@
 
 ---
 ### Why?
-* Simple to jump into.
-* Fast, because it is simple.
+* **Simple** to jump into. **Fast**, because it is simple.
 * Separate `tsconfig.json` for client and server.
 * Client and server can share code (And types). For example: [IUserDTO.d.ts](https://github.com/gilamran/fullstack-typescript/blob/master/src/shared/IUserDTO.d.ts)
 * The client is bundled using Webpack because it goes to the browser.
