@@ -4,6 +4,7 @@
     "sourceMap": true,
     "module": "commonjs",
     "importHelpers": true,
+    "allowJs": true,
     "outDir": "../../dist/server",
     "lib": ["es6"],
     "moduleResolution": "node",

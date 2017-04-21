@@ -6,17 +6,17 @@ const users: IUserDTO[] = [
   {
     userId: '1',
     userName: 'Gil Amran',
-    imageUrl: 'http://localhost:3000/public/gil.jpg'
+    imageUrl: '/public/gil.jpg'
   },
   {
     userId: '2',
     userName: 'Noa Tevel',
-    imageUrl: 'http://localhost:3000/public/gil.jpg'
+    imageUrl: '/public/noa.jpg'
   },
   {
     userId: '3',
     userName: 'John Doe',
-    imageUrl: 'http://localhost:3000/public/john.jpg'
+    imageUrl: '/public/john.jpg'
   },
 ];
 
