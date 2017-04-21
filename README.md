@@ -1,6 +1,14 @@
 ## FAST FullStack React with TypeScript starter kit.
 <img src="https://github.com/gilamran/fullstack-typescript/raw/master/logo.png" width="150">
+
 ---
+### Why?
+* Simple to jump into.
+* Fast, because it is simple.
+* Separate `tsconfig.json` for client and server.
+* Client and server can share code (And types). For example: [IUserDTO.d.ts](https://github.com/gilamran/fullstack-typescript/blob/master/src/shared/IUserDTO.d.ts)
+* The client is bundled using Webpack because it goes to the browser.
+* The server is emitted by TypeScript because node 6 support es6.
 
 
 ### What's included
@@ -8,11 +16,6 @@
 * React
 * React router v4
 * Example api communication (Using Axios)
-
-### How is works:
-* Separate `tsconfig.json` for client and server.
-* Client is bundled using Webpack, server is emitted by TypeScript.
-* Client and server can share code (And types). For example: [IUserDTO.d.ts](https://github.com/gilamran/fullstack-typescript/blob/master/src/shared/IUserDTO.d.ts)
 
 ### Usage:
 * `npm run dev` - Client and server are in watch mode with source maps, opens [http://localhost:3000](http://localhost:3000)
