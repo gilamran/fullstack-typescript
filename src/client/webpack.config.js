@@ -3,13 +3,14 @@ const webpack = require('webpack');
 const version = require('../../package.json').version;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
-const config = require('../server/config');
 
+const config = require('../server/config');
 const projectRoot = path.join(__dirname, '..', '..');
 
 const plugins = [
   new HtmlWebpackPlugin({
     title: 'TypeScript and React',
+    favicon: 'favicon.ico',
     filename: 'index.html',
     template: 'index.ejs'
   }),
