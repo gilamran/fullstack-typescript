@@ -1,5 +1,5 @@
-## FAST FullStack TypeScript with React starter kit.
-
+## FAST FullStack React with TypeScript starter kit.
+<img src="https://github.com/gilamran/fullstack-typescript/raw/master/logo.png" width="150">
 ---
 
 
