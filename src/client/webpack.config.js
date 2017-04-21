@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const version = require('../../package.json').version;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 const production = false;
 const projectRoot = path.join(__dirname, '..', '..');
@@ -32,6 +33,7 @@ module.exports = {
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: ({resource}) => /node_modules/.test(resource),
-    })
+    }),
+    new OpenBrowserPlugin({ url: 'http://localhost:3000' })
   ]
 };

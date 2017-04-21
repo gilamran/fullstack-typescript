@@ -43,9 +43,9 @@
 ---
 ##### todo
 * More docs
-* open the browser on the first compilation
 * tslint? (Only on pre-commit?)
 * minify on build?
+* allow to config the server/client ports
  
 * client
   * static files?

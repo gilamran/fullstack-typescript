@@ -41,6 +41,7 @@
     "babel-polyfill": "^6.23.0",
     "concurrently": "^3.4.0",
     "html-webpack-plugin": "^2.28.0",
+    "open-browser-webpack-plugin": "0.0.5",
     "rimraf": "^2.6.1",
     "tsc-watch": "^1.0.5",
     "typescript": "^2.2.1",
