@@ -10,5 +10,5 @@ app.use(apiRouter());
 app.use(config.IS_PRODUCTION ? staticsRouter() : staticsDevRouter());
 
 app.listen(config.SERVER_PORT, () => {
-  console.log(`App listening on port ${config.SERVER_PORT}!`)
+  console.log(`App listening on port ${config.SERVER_PORT}!`);
 });
