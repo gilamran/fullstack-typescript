@@ -1,5 +1,5 @@
 ## FAST FullStack React with TypeScript starter kit.
-<img src="https://github.com/gilamran/fullstack-typescript/raw/master/logo.png" width="150">
+<img src="https://github.com/gilamran/fullstack-typescript/raw/master/assets/images/logo.png" width="150">
 
 ---
 
@@ -12,7 +12,7 @@
 
 
 <p align="center"> 
-<img src="https://github.com/gilamran/fullstack-typescript/raw/master/flow.png" width="500">
+<img src="https://github.com/gilamran/fullstack-typescript/raw/master/assets/images/flow.png" width="500">
 </p>
 
 ---

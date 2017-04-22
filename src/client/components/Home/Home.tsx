@@ -1,6 +1,6 @@
 import * as React from 'react';
 const css = require('./Home.css');
-const logoImg = require('../../../../logo.png');
+const logoImg = require('../../../../assets/images/logo.png');
 
 export const Home = () => (
   <div className={css.title}>
