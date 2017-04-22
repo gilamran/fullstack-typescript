@@ -7,8 +7,8 @@
 * **Simple** to jump into, **Fast** because it is simple.
 * Separate `tsconfig.json` for client and server.
 * Client and server can share code (And types). For example: [IUserDTO.d.ts](https://github.com/gilamran/fullstack-typescript/blob/master/src/shared/IUserDTO.d.ts)
-* The client is bundled using Webpack because it goes to the browser.
-* The server is emitted by TypeScript because node 6 supports es6.
+* The client is bundled using [Webpack](https://webpack.github.io/) because it goes to the browser.
+* The server is emitted by [TypeScript](https://github.com/Microsoft/TypeScript) because node 6 supports es6.
 
 
 <p align="center"> 
@@ -19,12 +19,11 @@
 
 
 ### What's included
-* Client & Server in TypeScript
-* Css modules
-* React
-* React router v4
-* React bootstrap
-* Example api communication (Using [Axios](https://github.com/mzabriskie/axios))
+* [React](https://facebook.github.io/react/)
+* [React router v4](https://github.com/ReactTraining/react-router)
+* [React bootstrap](https://react-bootstrap.github.io/)
+* [Css modules](https://github.com/css-modules/css-modules)
+* [Axios](https://github.com/mzabriskie/axios) (For Client/Server communication)
 
 ### Usage:
 * `npm run dev` - Client and server are in watch mode with source maps, opens [http://localhost:3000](http://localhost:3000)
@@ -32,14 +31,15 @@
 * `npm start` - Just runs `node ./dist/server/server.js`  
 
 ### Notes:
-* `tslint` runs only on pre-commit
+* [tslint](https://palantir.github.io/tslint/) runs only on pre-commit
 
 ---
 
 ##### What's not included
-* Babel (Typescript can do it all)
+* Babel
 * Universal
-* Redux [How to add]
+* Redux
+* MobX
 
 ##### Requirements
 * Node 6+
