@@ -1,19 +1,22 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Nav, Navbar, NavItem } from 'react-bootstrap';
+import { LinkContainer } from 'react-router-bootstrap';
+
 const css = require('./NavBar.css');
 
 export const NavBar = () => (
-  <ul className={css.list}>
-    <li>
-      <Button bsStyle="primary">Primary</Button>
-      <NavLink activeClassName='active' exact to='/'>Home</NavLink>
-    </li>
-    <li>
-      <NavLink activeClassName='active' to='/users-list'>Users List</NavLink>
-    </li>
-    <li>
-      <NavLink activeClassName='active' to='/about'>About</NavLink>
-    </li>
-  </ul>
+  <Navbar>
+    <Nav bsStyle='pills'>
+      <LinkContainer exact to='/'>
+        <NavItem eventKey={1}>Home</NavItem>
+      </LinkContainer>
+      <LinkContainer to='/users-list'>
+        <NavItem eventKey={2}>Users List</NavItem>
+      </LinkContainer>
+      <LinkContainer exact to='/about'>
+        <NavItem eventKey={3}>About</NavItem>
+      </LinkContainer>
+    </Nav>
+  </Navbar>
 );

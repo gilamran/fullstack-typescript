@@ -11,7 +11,8 @@
         "trailing-comma": [false, {"multiline": "always", "singleline": "always"}],
         "ordered-imports": false,
         "object-literal-sort-keys": false,
-        "no-console": [false, "log", "error"]
+        "no-console": [false, "log", "error"],
+        "no-var-requires": false
     },
     "rulesDirectory": []
 }

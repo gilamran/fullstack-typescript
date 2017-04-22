@@ -2621,7 +2621,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@~15.5.7:
+prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.7, prop-types@^15.5.8, prop-types@~15.5.7:
   version "15.5.8"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
   dependencies:
@@ -2757,6 +2757,12 @@ react-prop-types@^0.4.0:
   resolved "https://registry.yarnpkg.com/react-prop-types/-/react-prop-types-0.4.0.tgz#f99b0bfb4006929c9af2051e7c1414a5c75b93d0"
   dependencies:
     warning "^3.0.0"
+
+react-router-bootstrap@^0.24.2:
+  version "0.24.2"
+  resolved "https://registry.yarnpkg.com/react-router-bootstrap/-/react-router-bootstrap-0.24.2.tgz#b99f5fcca812989d703eacbf400bed0529d040ab"
+  dependencies:
+    prop-types "^15.5.8"
 
 react-router-dom@^4.0.0:
   version "4.1.1"

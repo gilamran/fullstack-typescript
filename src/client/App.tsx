@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-require('bootstrap/dist/css/bootstrap.css');
-
 // Pages
 import { NavBar } from './components/NavBar/NavBar';
 import { Home } from './components/Home/Home';
