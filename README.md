@@ -23,6 +23,7 @@
 * Css modules
 * React
 * React router v4
+* React bootstrap
 * Example api communication (Using [Axios](https://github.com/mzabriskie/axios))
 
 ### Usage:
@@ -39,7 +40,6 @@
 * Babel (Typescript can do it all)
 * Universal
 * Redux [How to add]
-* Styling library [How to add]
 
 ##### Requirements
 * Node 6+
