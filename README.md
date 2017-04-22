@@ -30,6 +30,8 @@
 * `npm run build` - `dist` folder will include all the needed files, both client (Bundle) and server.
 * `npm start` - Just runs `node ./dist/server`  
 
+### Notes:
+* `tslint` runs only on pre-commit
 
 ---
 
