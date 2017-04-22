@@ -1,8 +1,10 @@
 import * as React from 'react';
 const css = require('./Home.css');
+const logoImg = require('../../../../logo.png');
 
 export const Home = () => (
   <div className={css.title}>
-    <h1>Welcome to the FAST FullStack TypeScript with React starter kit.</h1>
+    <img src={logoImg} className={css.logo}/>
+    <h1>Welcome to the FAST FullStack React with TypeScript starter kit.</h1>
   </div>
 );
