@@ -36,10 +36,9 @@
 ---
 
 ##### What's not included
-* Babel
+* Tests
 * Universal
-* Redux
-* MobX
+* Redux/MobX
 
 ##### Requirements
 * Node 6+
