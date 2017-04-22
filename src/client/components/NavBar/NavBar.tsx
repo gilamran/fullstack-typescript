@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { NavLink } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 const css = require('./NavBar.css');
 
 export const NavBar = () => (
   <ul className={css.list}>
     <li>
+      <Button bsStyle="primary">Primary</Button>
       <NavLink activeClassName='active' exact to='/'>Home</NavLink>
     </li>
     <li>
