@@ -19,18 +19,18 @@ export class UsersList extends React.Component<any, TState> {
     };
   }
 
-  async componentDidMount() {
+  public async componentDidMount() {
     const users = await loadUsersAPI();
-    this.setState({users: users, isLoading: false});
+    this.setState({users, isLoading: false});
   }
 
-  getUserById(userId) {
-    return this.state.users.find(u => u.userId == userId);
+  private getUserById(userId) {
+    return this.state.users.find(u => u.userId === userId);
   }
 
-  render() {
+  public render() {
     if (this.state.isLoading) {
-      return <div>Loading...</div>
+      return <div>Loading...</div>;
     }
 
     return (
@@ -44,8 +44,9 @@ export class UsersList extends React.Component<any, TState> {
           )}
         </ul>
 
-        <Route exact path="/users-list/:userId" render={props => <User user={this.getUserById(props.match.params.userId)}/>} />
+        <Route exact path='/users-list/:userId'
+               render={props => <User user={this.getUserById(props.match.params.userId)}/>}/>
       </div>
-    )
+    );
   }
 }
