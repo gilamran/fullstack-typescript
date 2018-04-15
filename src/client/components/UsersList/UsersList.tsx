@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Route, NavLink } from 'react-router-dom';
-import { Panel, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { IUserDTO } from '../../../shared/IUserDTO';
 import { User } from '../User/User';
 import { loadUsersAPI } from '../../utils/api-facade';
+import { Card, CardHeader, CardBody, CardText, CardTitle, ListGroup, ListGroupItem } from 'reactstrap';
 
 const css = require('./UsersList.css');
 
@@ -27,7 +27,9 @@ export class UsersList extends React.Component<any, IState> {
     }
 
     return (
-      <Panel header='Users List'>
+      <Card>
+      <CardHeader>Users List</CardHeader>
+      <CardBody>
         <ListGroup>
           {this.state.users.map(user =>
             (<ListGroupItem key={user.userId}>
@@ -38,7 +40,8 @@ export class UsersList extends React.Component<any, IState> {
 
         <Route exact path='/users-list/:userId'
                render={props => <User user={this.getUserById(props.match.params.userId)}/>}/>
-      </Panel>
+      </CardBody>
+    </Card>
     );
   }
 

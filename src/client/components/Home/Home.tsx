@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Jumbotron } from 'react-bootstrap';
+import { Jumbotron } from 'reactstrap';
 
 const css = require('./Home.css');
 const logoImg = require('../../../../assets/images/logo.png');

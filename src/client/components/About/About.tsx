@@ -1,11 +1,18 @@
 import * as React from 'react';
-import { Panel } from 'react-bootstrap';
+import { Card, CardHeader, CardBody, CardText, CardTitle } from 'reactstrap';
 
 const css = require('./About.css');
 
-export const About = () => (
-  <Panel className={css.title} header='About'>
-    <h1>Created by Gil Amran.</h1>
-    <h2>You can find information at <a href='http://github.com/gilamran/fullstack-typescript'>github</a></h2>
-  </Panel>
+const About = () => (
+  <Card>
+    <CardHeader>About</CardHeader>
+    <CardBody>
+      <CardTitle>Created by Gil Amran.</CardTitle>
+      <CardText>
+        You can find information at <a href='http://github.com/gilamran/fullstack-typescript'>github</a>
+      </CardText>
+    </CardBody>
+  </Card>
 );
+
+export default About;
