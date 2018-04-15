@@ -18,9 +18,6 @@
     "dev": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run dev-server\" \"npm run dev-client\"",
     "build": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run build-server\" \"npm run build-client\""
   },
-  "pre-commit": [
-    "lint"
-  ],
   "keywords": [
     "typescript",
     "react",
@@ -49,7 +46,6 @@
     "file-loader": "^0.11.1",
     "html-webpack-plugin": "^2.28.0",
     "open-browser-webpack-plugin": "0.0.5",
-    "pre-commit": "^1.2.2",
     "rimraf": "^2.6.1",
     "style-loader": "^0.16.1",
     "tsc-watch": "^1.0.5",
