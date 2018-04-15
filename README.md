@@ -19,9 +19,9 @@
 
 
 ### What's included
-* [React](https://facebook.github.io/react/)
+* [React v16](https://facebook.github.io/react/)
 * [React router v4](https://github.com/ReactTraining/react-router)
-* [React bootstrap](https://react-bootstrap.github.io/)
+* [Reactstrap for bootstrap V4](https://reactstrap.github.io/)
 * [Css modules](https://github.com/css-modules/css-modules)
 * [Axios](https://github.com/mzabriskie/axios) (For Client/Server communication)
 
@@ -29,9 +29,6 @@
 * `npm run dev` - Client and server are in watch mode with source maps, opens [http://localhost:3000](http://localhost:3000)
 * `npm run build` - `dist` folder will include all the needed files, both client (Bundle) and server.
 * `npm start` - Just runs `node ./dist/server/server.js`  
-
-### Notes:
-* [tslint](https://palantir.github.io/tslint/) runs only on pre-commit
 
 ---
 
