@@ -3,8 +3,10 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 // Pages
 import { NavBar } from './components/NavBar/NavBar';
 import { Home } from './components/Home/Home';
-import About from './components/About/About';
+import { About } from './components/About/About';
 import { UsersList } from './components/UsersList/UsersList';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const App = () => (
   <BrowserRouter>

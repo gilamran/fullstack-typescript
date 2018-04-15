@@ -3,7 +3,7 @@ import { Card, CardHeader, CardBody, CardText, CardTitle } from 'reactstrap';
 
 const css = require('./About.css');
 
-const About = () => (
+export const About = () => (
   <Card>
     <CardHeader>About</CardHeader>
     <CardBody>
@@ -14,5 +14,3 @@ const About = () => (
     </CardBody>
   </Card>
 );
-
-export default About;

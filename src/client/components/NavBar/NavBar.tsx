@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 export const NavBar = () => (
   <Navbar>
     <NavbarBrand href='/'>Brand</NavbarBrand>
-    <Nav className='pull-xs-right' navbar>
+    <Nav className='pull-xs-right'>
       <NavItem>
         <BSNavLink tag={NavLink} to='/'>
           <span>Home</span>
