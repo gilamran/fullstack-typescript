@@ -56,9 +56,9 @@ npm run dev
 
 If you want to detach from this repository into your own repository do this:
 ```
-git remote remove master
-git remote add master YOUR_REPO_URL
-git push
+git remote remove origin
+git remote add origin YOUR_REPO_URL
+git push -u origin master
 ```
 
 ### Usage
