@@ -48,7 +48,7 @@
 
 Just clone this repository into your own project folder. and start working
 ```
-git clone --depth=1 https://github.com/gilamran/fullstack-typescript.git <MyProjectName>
+git clone https://github.com/gilamran/fullstack-typescript.git <MyProjectName>
 cd <MyProjectName>
 npm install
 npm run dev
