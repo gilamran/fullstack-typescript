@@ -21,7 +21,7 @@
 ### What's included
 * [React v16](https://facebook.github.io/react/)
 * [React router v4](https://github.com/ReactTraining/react-router)
-* [Reactstrap for bootstrap V4](https://reactstrap.github.io/)
+* [Reactstrap for bootstrap V3](https://reactstrap.github.io/)
 * [Css modules](https://github.com/css-modules/css-modules)
 * [Axios](https://github.com/mzabriskie/axios) (For Client/Server communication)
 

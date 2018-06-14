@@ -13,18 +13,15 @@ const plugins = [
     favicon: 'favicon.ico',
     filename: 'index.html',
     template: 'index.ejs'
-  }),
-  new webpack.optimize.CommonsChunkPlugin({
-    name: 'vendor',
-    minChunks: ({resource}) => /node_modules/.test(resource),
   })
 ];
 
 if (!config.IS_PRODUCTION) {
-  plugins.push(new OpenBrowserPlugin({url: `http://localhost:${config.SERVER_PORT}`}));
+  plugins.push(new OpenBrowserPlugin({ url: `http://localhost:${config.SERVER_PORT}` }));
 }
 
 module.exports = {
+  mode: config.IS_PRODUCTION ? 'production' : 'development',
   devtool: config.IS_PRODUCTION ? '' : 'inline-source-map',
   entry: ['babel-polyfill', './client'],
   output: {
@@ -35,8 +32,19 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.ts', '.tsx']
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          chunks: "all"
+        }
+      }
+    }
+  },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.tsx?$/,
         use: 'awesome-typescript-loader'
