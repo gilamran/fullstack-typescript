@@ -1,6 +1,6 @@
+import { Card, CardContent, CardHeader, Typography } from '@material-ui/core';
 import * as React from 'react';
 import { IUserDTO } from '../../../shared/IUserDTO';
-import { Card, CardHeader, CardBody, CardText, CardTitle } from 'reactstrap';
 
 interface IProps {
   user: IUserDTO;
@@ -8,11 +8,10 @@ interface IProps {
 
 export const User: React.StatelessComponent<IProps> = (props: IProps) => (
   <Card>
-    <CardHeader>User Details</CardHeader>
-    <CardBody>
-      <CardTitle>User: {props.user.userName}</CardTitle>
-      <CardText>Id: {props.user.userId}</CardText>
-      <CardText>Image: {props.user.imageUrl}</CardText>
-    </CardBody>
+    <CardHeader title={`User: ${props.user.userName}`} />
+    <CardContent>
+      <Typography variant='subheading'>Id: {props.user.userId}</Typography>
+      <Typography variant='subheading'>Image Url: {props.user.imageUrl}</Typography>
+    </CardContent>
   </Card>
 );

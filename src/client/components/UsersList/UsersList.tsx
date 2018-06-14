@@ -1,11 +1,9 @@
+import { Card, CardContent, CardHeader, Grid, List, ListItem } from '@material-ui/core';
 import * as React from 'react';
-import { Route, NavLink } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import { IUserDTO } from '../../../shared/IUserDTO';
-import { User } from '../User/User';
 import { loadUsersAPI } from '../../utils/api-facade';
-import { Card, CardHeader, CardBody, CardText, CardTitle, ListGroup, ListGroupItem } from 'reactstrap';
-
-const css = require('./UsersList.css');
+import { User } from '../User/User';
 
 interface IState {
   users: IUserDTO[];
@@ -27,27 +25,32 @@ export class UsersList extends React.Component<any, IState> {
     }
 
     return (
-      <Card>
-      <CardHeader>Users List</CardHeader>
-      <CardBody>
-        <ListGroup>
-          {this.state.users.map(user =>
-            (<ListGroupItem key={user.userId}>
-              <NavLink to={`/users-list/${user.userId}`}>{user.userName}</NavLink>
-            </ListGroupItem>)
-          )}
-        </ListGroup>
-
-        <Route exact path='/users-list/:userId'
-               render={props => <User user={this.getUserById(props.match.params.userId)}/>}/>
-      </CardBody>
-    </Card>
+      <>
+        <Grid item xs={12}>
+          <Card>
+            <CardHeader title='Users List' />
+            <CardContent>
+              <List>
+                {this.state.users.map(user =>
+                  (<ListItem key={user.userId}>
+                    <NavLink to={`/users-list/${user.userId}`}>{user.userName}</NavLink>
+                  </ListItem>)
+                )}
+              </List>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item xs={12}>
+          <Route exact path='/users-list/:userId'
+            render={props => <User user={this.getUserById(props.match.params.userId)} />} />
+        </Grid>
+      </>
     );
   }
 
   public async componentDidMount() {
     const users = await loadUsersAPI();
-    this.setState({users, isLoading: false});
+    this.setState({ users, isLoading: false });
   }
 
   private getUserById(userId) {

@@ -35,16 +35,15 @@
   "license": "MIT",
   "author": "Gil Amran",
   "dependencies": {
+    "@material-ui/core": "^1.2.1",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
-    "bootstrap": "^3.3.7",
     "express": "^4.16.3",
     "http-proxy-middleware": "^0.18.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
-    "reactstrap": "^6.1.0",
     "tslib": "^1.9.2"
   },
   "devDependencies": {
