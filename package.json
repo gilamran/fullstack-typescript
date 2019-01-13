@@ -18,6 +18,12 @@
     "dev": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run dev-server\" \"npm run dev-client\"",
     "build": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run build-server\" \"npm run build-client\""
   },
+  "prettier": {
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true
+  },
   "keywords": [
     "typescript",
     "react",
