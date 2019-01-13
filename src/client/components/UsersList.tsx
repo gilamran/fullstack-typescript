@@ -1,9 +1,16 @@
-import { Card, CardContent, CardHeader, Grid, List, ListItem } from '@material-ui/core';
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  Grid,
+  List,
+  ListItem,
+} from '@material-ui/core';
 import * as React from 'react';
 import { NavLink, Route } from 'react-router-dom';
-import { IUserDTO } from '../../../shared/IUserDTO';
-import { loadUsersAPI } from '../../utils/api-facade';
-import { User } from '../User/User';
+import { IUserDTO } from '../../shared/IUserDTO';
+import { loadUsersAPI } from '../utils/api-facade';
+import { User } from './User';
 
 interface IState {
   users: IUserDTO[];
@@ -15,7 +22,7 @@ export class UsersList extends React.Component<any, IState> {
     super(props);
     this.state = {
       users: [],
-      isLoading: true
+      isLoading: true,
     };
   }
 
@@ -31,18 +38,25 @@ export class UsersList extends React.Component<any, IState> {
             <CardHeader title='Users List' />
             <CardContent>
               <List>
-                {this.state.users.map(user =>
-                  (<ListItem key={user.userId}>
-                    <NavLink to={`/users-list/${user.userId}`}>{user.userName}</NavLink>
-                  </ListItem>)
-                )}
+                {this.state.users.map(user => (
+                  <ListItem key={user.userId}>
+                    <NavLink to={`/users-list/${user.userId}`}>
+                      {user.userName}
+                    </NavLink>
+                  </ListItem>
+                ))}
               </List>
             </CardContent>
           </Card>
         </Grid>
         <Grid item xs={12}>
-          <Route exact path='/users-list/:userId'
-            render={props => <User user={this.getUserById(props.match.params.userId)} />} />
+          <Route
+            exact
+            path='/users-list/:userId'
+            render={props => (
+              <User user={this.getUserById(props.match.params.userId)} />
+            )}
+          />
         </Grid>
       </>
     );

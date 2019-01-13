@@ -1,17 +1,17 @@
 import { Grid } from '@material-ui/core';
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { About } from './components/About/About';
+import { About } from './components/About';
 // Pages
-import { Header } from './components/Header/Header';
-import { Home } from './components/Home/Home';
-import { UsersList } from './components/UsersList/UsersList';
+import { Header } from './components/Header';
+import { Home } from './components/Home';
+import { UsersList } from './components/UsersList';
 
 export const App = () => (
   <BrowserRouter>
     <div>
       <Grid container spacing={24}>
-      <Header />
+        <Header />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/about' component={About} />

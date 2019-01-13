@@ -22,7 +22,8 @@
     "trailingComma": "all",
     "tabWidth": 2,
     "semi": true,
-    "singleQuote": true
+    "singleQuote": true,
+    "jsxSingleQuote": true
   },
   "keywords": [
     "typescript",
