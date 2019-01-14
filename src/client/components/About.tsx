@@ -9,7 +9,7 @@ import * as React from 'react';
 
 const logoImg = require('../../../assets/images/logo.png');
 
-export const About = () => (
+export const About: React.FunctionComponent = () => (
   <Grid item xs={12}>
     <Card>
       <CardHeader title='Created by Gil Amran.' />

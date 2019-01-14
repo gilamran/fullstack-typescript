@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const css = require('./Home.css');
 const logoImg = require('../../../assets/images/logo.png');
 
-export const Home = () => (
+export const Home: React.FunctionComponent = () => (
   <Grid item xs={12}>
     <Card>
       <CardHeader title='FullStack React with TypeScript' />

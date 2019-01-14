@@ -6,14 +6,20 @@ interface IProps {
   user: IUserDTO;
 }
 
-export const User: React.StatelessComponent<IProps> = (props: IProps) => (
-  <Card>
-    <CardHeader title={`User: ${props.user.userName}`} />
-    <CardContent>
-      <Typography variant='subheading'>Id: {props.user.userId}</Typography>
-      <Typography variant='subheading'>
-        Image Url: {props.user.imageUrl}
-      </Typography>
-    </CardContent>
-  </Card>
-);
+export class User extends React.Component<IProps> {
+  public render() {
+    return (
+      <Card>
+        <CardHeader title={`User: ${this.props.user.userName}`} />
+        <CardContent>
+          <Typography variant='subheading'>
+            Id: {this.props.user.userId}
+          </Typography>
+          <Typography variant='subheading'>
+            Image Url: {this.props.user.imageUrl}
+          </Typography>
+        </CardContent>
+      </Card>
+    );
+  }
+}
