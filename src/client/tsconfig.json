@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "esnext",
+    "moduleResolution": "node",
     "sourceMap": true,
-    "module": "commonjs",
-    "importHelpers": true,
+    "isolatedModules": true,
     "outDir": "../../dist/client",
     "lib": ["es2015", "dom"],
     "types": [],
