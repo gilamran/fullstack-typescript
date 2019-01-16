@@ -1,22 +1,26 @@
+import Grid from '@material-ui/core/Grid';
 import * as React from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { About } from './components/About';
 // Pages
-import { NavBar } from './components/NavBar/NavBar';
-import { Home } from './components/Home/Home';
-import { About } from './components/About/About';
-import { UsersList } from './components/UsersList/UsersList';
+import { Header } from './components/Header';
+import { Home } from './components/Home';
+import { UsersList } from './components/UsersList';
+import { getVersion } from '../shared/utils';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+console.log(`The App version is ${getVersion()}`);
 
 export const App = () => (
   <BrowserRouter>
     <div>
-      <NavBar />
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/about' component={About} />
-        <Route path='/users-list' component={UsersList} />
-      </Switch>
+      <Grid container spacing={24}>
+        <Header />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/about' component={About} />
+          <Route path='/users-list' component={UsersList} />
+        </Switch>
+      </Grid>
     </div>
   </BrowserRouter>
 );

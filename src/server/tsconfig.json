@@ -5,12 +5,11 @@
     "module": "commonjs",
     "importHelpers": true,
     "allowJs": true,
-    "outDir": "../../dist/server",
+    "outDir": "../../dist/server-root",
+    "rootDir": "..",
     "lib": ["es6"],
     "moduleResolution": "node",
     "types": ["node"]
   },
-  "files": [
-    "./server.ts"
-  ]
+  "files": ["./main.ts"]
 }

@@ -7,16 +7,24 @@
     "node": ">=6.9.5"
   },
   "scripts": {
+    "test": "jest",
     "clean": "rimraf dist",
     "lint": "tslint -c tslint.json 'src/**/*.ts' 'src/**/*.tsx'",
-    "start": "node ./dist/server/server.js",
-    "start:prod": "cross-env NODE_ENV=production node ./dist/server/server.js",
-    "build-client": "cd ./src/client && cross-env NODE_ENV=production webpack -p",
-    "dev-client": "cd ./src/client && webpack-dev-server -w",
+    "start": "node index.js",
+    "start:prod": "cross-env NODE_ENV=production node index.js",
+    "build-client": "cross-env NODE_ENV=production webpack -p",
+    "dev-client": "webpack-dev-server -w",
     "build-server": "tsc -p ./src/server",
-    "dev-server": "tsc-watch -p ./src/server --onSuccess \"node ./dist/server/server.js\"",
-    "dev": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run dev-server\" \"npm run dev-client\"",
-    "build": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgMagenta.bold\" \"npm run build-server\" \"npm run build-client\""
+    "dev-server": "tsc-watch -p ./src/server --onSuccess \"node index.js\"",
+    "dev": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run dev-server\" \"npm run dev-client\"",
+    "build": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run build-server\" \"npm run build-client\""
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "jsxSingleQuote": true
   },
   "keywords": [
     "typescript",
@@ -34,41 +42,81 @@
   },
   "license": "MIT",
   "author": "Gil Amran",
-  "devDependencies": {
-    "@types/express": "^4.0.35",
-    "@types/node": "^7.0.11",
-    "@types/react": "^16.3.10",
-    "awesome-typescript-loader": "^3.1.2",
-    "babel-polyfill": "^6.23.0",
-    "concurrently": "^3.4.0",
-    "cross-env": "^4.0.0",
-    "css-loader": "^0.28.0",
-    "file-loader": "^0.11.1",
-    "html-webpack-plugin": "^2.28.0",
-    "open-browser-webpack-plugin": "0.0.5",
-    "rimraf": "^2.6.1",
-    "style-loader": "^0.16.1",
-    "tsc-watch": "^1.0.5",
-    "tslint": "^5.1.0",
-    "typescript": "^2.2.1",
-    "url-loader": "^0.5.8",
-    "webpack": "^2.3.2",
-    "webpack-dev-server": "^2.4.2"
+  "jest": {
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/src/client/setupEnzyme.ts",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "<rootDir>/src/tsconfig-for-tests.json"
+      }
+    }
   },
   "dependencies": {
-    "axios": "^0.15.3",
-    "body-parser": "^1.17.1",
-    "bootstrap": "^4.1.0",
-    "concurrently": "^3.4.0",
-    "express": "^4.15.2",
-    "file-loader": "^0.11.1",
-    "http-proxy-middleware": "^0.17.4",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "reactstrap": "^5.0.0-beta.3",
-    "tslib": "^1.6.0",
-    "url-loader": "^0.5.8"
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.2.3",
+    "@babel/plugin-proposal-numeric-separator": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@material-ui/core": "^3.8.3",
+    "@types/enzyme": "^3.1.15",
+    "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.18",
+    "@types/react": "^16.7.18",
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.5",
+    "concurrently": "^4.1.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.0",
+    "cssnano": "^4.1.8",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "http-proxy-middleware": "^0.19.1",
+    "jest": "^23.6.0",
+    "open-browser-webpack-plugin": "0.0.5",
+    "postcss-loader": "^3.0.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "rimraf": "^2.6.3",
+    "style-loader": "^0.23.1",
+    "ts-jest": "^23.10.5",
+    "tsc-watch": "^1.0.31",
+    "tslib": "^1.9.3",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.2",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.28.4",
+    "webpack-bundle-analyzer": "^3.0.3",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.14"
   }
 }
