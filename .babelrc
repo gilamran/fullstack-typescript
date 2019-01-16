@@ -5,8 +5,8 @@
     ["@babel/env", { "modules": false }]
   ],
   "plugins": [
-    "@babel/plugin-proposal-numeric-separator",
-    "@babel/plugin-transform-runtime",
+    "@babel/proposal-numeric-separator",
+    "@babel/transform-runtime",
     "@babel/proposal-class-properties",
     "@babel/proposal-object-rest-spread"
   ]
