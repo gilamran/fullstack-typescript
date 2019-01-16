@@ -5,10 +5,10 @@
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "outDir": "../../dist/client",
+    "outDir": "./dist",
     "lib": ["es2015", "dom"],
     "types": [],
     "jsx": "react"
   },
-  "files": ["./client.tsx"]
+  "files": ["./types.d.ts", "./src/client/client.tsx"]
 }

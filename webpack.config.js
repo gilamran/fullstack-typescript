@@ -1,19 +1,17 @@
 const path = require('path');
-const version = require('../../package.json').version;
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const cssnano = require('cssnano');
 
-const config = require('../server/config');
-const projectRoot = path.join(__dirname, '..', '..');
+const config = require('./src/server/config');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
 const plugins = [
   new HtmlWebpackPlugin({
     title: 'TypeScript and React',
-    favicon: 'favicon.ico',
+    favicon: './src/client/favicon.ico',
     filename: 'index.html',
-    template: 'index.ejs',
+    template: './src/client/index.ejs',
   }),
 ];
 
@@ -29,10 +27,10 @@ if (!config.IS_PRODUCTION) {
 module.exports = {
   mode: config.IS_PRODUCTION ? 'production' : 'development',
   devtool: config.IS_PRODUCTION ? '' : 'inline-source-map',
-  entry: ['./client'],
+  entry: ['./src/client/client'],
   output: {
-    path: path.join(projectRoot, 'dist', 'public'),
-    filename: `[name]-${version}-bundle.js`,
+    path: path.join(__dirname, 'dist', 'public'),
+    filename: `[name]-[hash:8]-bundle.js`,
     publicPath: '/public/',
   },
   resolve: {
@@ -54,6 +52,7 @@ module.exports = {
       {
         test: /\.tsx?$/,
         loaders: ['babel-loader'],
+        exclude: [/node_modules/, nodeModulesPath],
       },
       {
         test: /\.css$/,

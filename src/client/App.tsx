@@ -6,6 +6,9 @@ import { About } from './components/About';
 import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { UsersList } from './components/UsersList';
+import { getVersion } from '../shared/utils';
+
+console.log(`The App version is ${getVersion()}`);
 
 export const App = () => (
   <BrowserRouter>

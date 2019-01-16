@@ -3,6 +3,9 @@ import { apiRouter } from './routes/api-router';
 import { staticsRouter } from './routes/statics-router';
 import { staticsDevRouter } from './routes/statics-dev-router';
 import * as config from './config';
+import { getVersion } from '../shared/utils';
+
+console.log(`The App version is ${getVersion()}`);
 
 const app = express();
 
