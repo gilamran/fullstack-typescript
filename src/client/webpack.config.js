@@ -17,6 +17,9 @@ const plugins = [
   }),
 ];
 
+//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+//plugins.push(new BundleAnalyzerPlugin());
+
 if (!config.IS_PRODUCTION) {
   plugins.push(
     new OpenBrowserPlugin({ url: `http://localhost:${config.SERVER_PORT}` }),

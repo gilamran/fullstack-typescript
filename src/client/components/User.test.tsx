@@ -1,4 +1,6 @@
-import { Card, CardHeader, Typography } from '@material-ui/core';
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+import Typography from '@material-ui/core/Typography';
 import { createShallow } from '@material-ui/core/test-utils';
 import * as React from 'react';
 import { IUserDTO } from '../../shared/IUserDTO';

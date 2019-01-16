@@ -1,4 +1,4 @@
-import { Grid } from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { About } from './components/About';
