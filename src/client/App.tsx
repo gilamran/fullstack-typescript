@@ -1,16 +1,17 @@
 import Grid from '@material-ui/core/Grid';
 import * as React from 'react';
+import { hot } from 'react-hot-loader';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { getVersion } from '../shared/utils';
 import { About } from './components/About';
 // Pages
 import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { UsersList } from './components/UsersList';
-import { getVersion } from '../shared/utils';
 
 console.log(`The App version is ${getVersion()}`);
 
-export const App = () => (
+const AppImpl = () => (
   <BrowserRouter>
     <div>
       <Grid container spacing={24}>
@@ -24,3 +25,5 @@ export const App = () => (
     </div>
   </BrowserRouter>
 );
+
+export const App = hot(module)(AppImpl);

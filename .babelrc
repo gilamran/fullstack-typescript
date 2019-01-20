@@ -5,6 +5,7 @@
     ["@babel/env", { "modules": false }]
   ],
   "plugins": [
+    "react-hot-loader/babel",
     "@babel/proposal-numeric-separator",
     "@babel/transform-runtime",
     "@babel/proposal-class-properties",
