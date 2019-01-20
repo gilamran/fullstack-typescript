@@ -27,7 +27,7 @@ if (!config.IS_PRODUCTION) {
 module.exports = {
   mode: config.IS_PRODUCTION ? 'production' : 'development',
   devtool: config.IS_PRODUCTION ? '' : 'inline-source-map',
-  entry: ['./src/client/client'],
+  entry: ["@babel/polyfill", './src/client/client'],
   output: {
     path: path.join(__dirname, 'dist', 'public'),
     filename: `[name]-[hash:8]-bundle.js`,
