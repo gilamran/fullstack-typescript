@@ -14,7 +14,7 @@
     "start:prod": "cross-env NODE_ENV=production node index.js",
     "build-client": "cross-env NODE_ENV=production webpack -p",
     "dev-client": "webpack-dev-server -w",
-    "dev-client:hot": "webpack-dev-server -w --hot",
+    "dev-client:hot": "npm run dev -- --hot",
     "build-server": "tsc -p ./src/server",
     "dev-server": "tsc-watch -p ./src/server --onSuccess \"node index.js\"",
     "dev": "npm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run dev-server\" \"npm run dev-client\"",
