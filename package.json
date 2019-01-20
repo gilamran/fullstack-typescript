@@ -103,7 +103,7 @@
     "html-webpack-plugin": "^3.2.0",
     "http-proxy-middleware": "^0.19.1",
     "jest": "^23.6.0",
-    "open-browser-webpack-plugin": "0.0.5",
+    "open-browser-webpack-plugin": "github:rodrigopandini/open-browser-webpack-plugin",
     "postcss-loader": "^3.0.0",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
