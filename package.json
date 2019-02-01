@@ -12,6 +12,7 @@
     "lint": "tslint -c tslint.json 'src/**/*.ts' 'src/**/*.tsx'",
     "start": "node index.js",
     "start:prod": "cross-env NODE_ENV=production node index.js",
+    "type-check": "tsc -p ./tsconfig.json",
     "build-client": "cross-env NODE_ENV=production webpack -p",
     "dev-client": "webpack-dev-server -w",
     "dev-client:hot": "webpack-dev-server -w --hot",
