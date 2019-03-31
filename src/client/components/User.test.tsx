@@ -10,7 +10,7 @@ describe('<User/>', () => {
   const user: IUserDTO = {
     userId: '123',
     userName: 'Gil Amran',
-    imageUrl: '/public/gil.jpg',
+    imageUrl: '/statics/gil.jpg',
   };
   const MUIShallow = createShallow();
 
@@ -40,6 +40,6 @@ describe('<User/>', () => {
     const wrapper = MUIShallow(<User user={user} />);
     const userImageComp = wrapper.find(Typography).at(1);
     const content = userImageComp.dive().dive();
-    expect(content.text()).toEqual('Image Url: /public/gil.jpg');
+    expect(content.text()).toEqual('Image Url: /statics/gil.jpg');
   });
 });
