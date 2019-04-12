@@ -1,27 +1,18 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ManifestPlugin = require('webpack-manifest-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const cssnano = require('cssnano');
 
 const config = require('./src/server/config');
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
-const plugins = [
-  new HtmlWebpackPlugin({
-    title: 'TypeScript and React',
-    favicon: './src/client/favicon.ico',
-    filename: 'index.html',
-    template: './src/client/index.ejs',
-  }),
-];
+const plugins = [new ManifestPlugin()];
 
 //const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 //plugins.push(new BundleAnalyzerPlugin());
 
 if (!config.IS_PRODUCTION) {
-  plugins.push(
-    new OpenBrowserPlugin({ url: `http://localhost:${config.SERVER_PORT}` }),
-  );
+  plugins.push(new OpenBrowserPlugin({ url: `http://localhost:${config.SERVER_PORT}` }));
 }
 
 module.exports = {
@@ -29,9 +20,9 @@ module.exports = {
   devtool: config.IS_PRODUCTION ? '' : 'inline-source-map',
   entry: ['@babel/polyfill', './src/client/client'],
   output: {
-    path: path.join(__dirname, 'dist', 'public'),
+    path: path.join(__dirname, 'dist', 'statics'),
     filename: `[name]-[hash:8]-bundle.js`,
-    publicPath: '/public/',
+    publicPath: '/statics/',
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
@@ -82,6 +73,9 @@ module.exports = {
         use: 'url-loader?limit=10000',
       },
     ],
+  },
+  devServer: {
+    port: config.WEBPACK_PORT,
   },
   plugins,
   externals: {

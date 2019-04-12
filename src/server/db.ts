@@ -2,17 +2,17 @@ import { IUserDTO } from '../shared/IUserDTO';
 
 export const users: IUserDTO[] = [
   {
-    imageUrl: '/public/gil.jpg',
+    imageUrl: '/statics/gil.jpg',
     userId: '1',
     userName: 'Gil Amran',
   },
   {
-    imageUrl: '/public/noa.jpg',
+    imageUrl: '/statics/noa.jpg',
     userId: '2',
     userName: 'Noa Tevel',
   },
   {
-    imageUrl: '/public/john.jpg',
+    imageUrl: '/statics/john.jpg',
     userId: '3',
     userName: 'John Doe',
   },
