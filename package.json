@@ -77,7 +77,6 @@
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "request": "^2.88.0",
     "tslib": "^1.9.3"
   },
   "devDependencies": {
@@ -114,6 +113,7 @@
     "react-hot-loader": "^4.6.3",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
+    "request": "^2.88.0",
     "rimraf": "^2.6.3",
     "style-loader": "^0.23.1",
     "ts-jest": "^23.10.5",
