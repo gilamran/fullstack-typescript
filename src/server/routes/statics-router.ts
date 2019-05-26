@@ -1,7 +1,6 @@
 import * as path from 'path';
 import * as express from 'express';
 import { Router } from 'express';
-import * as proxy from 'http-proxy-middleware';
 import * as config from '../config';
 
 export function staticsRouter() {
@@ -13,6 +12,7 @@ export function staticsRouter() {
     // All the assets are in "statics" folder (Done by Webpack during the build phase)
     router.use('/statics', express.static(staticsPath));
   } else {
+    const proxy = require('http-proxy-middleware');
     // All the assets are hosted by Webpack on localhost:${config.WEBPACK_PORT} (Webpack-dev-server)
     router.use(
       '/statics',
