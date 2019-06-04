@@ -51,6 +51,7 @@ git push -u origin master
 ├── .babelrc                # babel configuration
 ├── .gitignore              # ignored git files and folders
 ├── .nvmrc                  # Force nodejs version
+├── .env                    # (ignored) Can be used to override environment variables
 ├── package.json            # The list of 3rd party libraries and utilities
 └── tslint.json             # TypeScript linting configuration file
 ├── README.md               # This file
@@ -71,6 +72,10 @@ git push -u origin master
 - `npm run test` - Runs jest tests
 - `npm run build` - `dist` folder will include all the needed files, both client (Bundle) and server.
 - `npm start` - Just runs `node ./dist/server/server.js`
+
+### Config
+
+All applications require a config mechanism, for example, `SLACK_API_TOKEN`. Things that you don't want in your git history, you want a different environment to have different value (dev/staging/production). This repo uses the file `config.js` (not ts) to access all your app variables. And a `.env` file to override variable in dev environment. This file is ignored from git.
 
 ---
 

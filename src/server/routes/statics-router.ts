@@ -1,25 +1,25 @@
 import * as path from 'path';
 import * as express from 'express';
 import { Router } from 'express';
-import * as config from '../config';
+import { IS_DEV, WEBPACK_PORT } from '../config';
 
 export function staticsRouter() {
   const router = Router();
 
-  if (config.IS_PRODUCTION) {
-    const staticsPath = path.join(__dirname, '..', '..', '..', 'statics');
-
-    // All the assets are in "statics" folder (Done by Webpack during the build phase)
-    router.use('/statics', express.static(staticsPath));
-  } else {
+  if (IS_DEV) {
     const proxy = require('http-proxy-middleware');
     // All the assets are hosted by Webpack on localhost:${config.WEBPACK_PORT} (Webpack-dev-server)
     router.use(
       '/statics',
       proxy({
-        target: `http://localhost:${config.WEBPACK_PORT}/`,
+        target: `http://localhost:${WEBPACK_PORT}/`,
       }),
     );
+  } else {
+    const staticsPath = path.join(process.cwd(), 'dist', 'statics');
+
+    // All the assets are in "statics" folder (Done by Webpack during the build phase)
+    router.use('/statics', express.static(staticsPath));
   }
   return router;
 }

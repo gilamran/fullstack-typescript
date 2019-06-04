@@ -1,5 +1,20 @@
+const IS_DEV = process.env.NODE_ENV !== 'production';
+
+const findUp = require('find-up');
+
+if (IS_DEV) {
+  require('dotenv').config({ path: findUp.sync('.env') });
+}
+
+const { version: VERSION } = require(findUp.sync('package.json'));
+
+// server
+const SERVER_PORT = process.env.PORT || 3001;
+const WEBPACK_PORT = 8086; // For dev environment only
+
 module.exports = {
-  IS_PRODUCTION: process.env.NODE_ENV === 'production',
-  SERVER_PORT: process.env.PORT || 3000,
-  WEBPACK_PORT: 8080,
+  IS_DEV,
+  VERSION,
+  SERVER_PORT,
+  WEBPACK_PORT,
 };
