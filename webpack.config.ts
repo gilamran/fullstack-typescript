@@ -1,4 +1,4 @@
-const path = require('path');
+import * as path from 'path';
 const ManifestPlugin = require('webpack-manifest-plugin');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const cssnano = require('cssnano');
