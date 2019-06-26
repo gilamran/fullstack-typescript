@@ -8,7 +8,7 @@ import { SERVER_PORT, IS_DEV, WEBPACK_PORT } from './src/server/config';
 
 const plugins = [new ManifestPlugin()];
 
-// import BundleAnalyzerPlugin from 'webpack-bundle-analyzer';
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 // plugins.push(new BundleAnalyzerPlugin());
 
 if (IS_DEV) {
