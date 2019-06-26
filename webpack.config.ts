@@ -1,24 +1,25 @@
-const path = require('path');
-const ManifestPlugin = require('webpack-manifest-plugin');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
-const cssnano = require('cssnano');
+import path from 'path';
+import webpack from 'webpack';
+import ManifestPlugin from 'webpack-manifest-plugin';
+import OpenBrowserPlugin from 'open-browser-webpack-plugin';
+import cssnano from 'cssnano';
 
-const config = require('./src/server/config');
-const { SERVER_PORT, IS_DEV, WEBPACK_PORT } = config;
+import { SERVER_PORT, IS_DEV, WEBPACK_PORT } from './src/server/config';
 
 const plugins = [new ManifestPlugin()];
 
-//const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-//plugins.push(new BundleAnalyzerPlugin());
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+// plugins.push(new BundleAnalyzerPlugin());
 
 if (IS_DEV) {
   plugins.push(new OpenBrowserPlugin({ url: `http://localhost:${SERVER_PORT}` }));
 }
 
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
-module.exports = {
+
+const config: webpack.Configuration = {
   mode: IS_DEV ? 'development' : 'production',
-  devtool: IS_DEV ? 'inline-source-map' : '',
+  devtool: IS_DEV ? 'inline-source-map' : false,
   entry: ['@babel/polyfill', './src/client/client'],
   output: {
     path: path.join(__dirname, 'dist', 'statics'),
@@ -80,7 +81,9 @@ module.exports = {
   },
   plugins,
   externals: {
-    react: 'React',
+    'react': 'React',
     'react-dom': 'ReactDOM',
   },
 };
+
+export default config;
