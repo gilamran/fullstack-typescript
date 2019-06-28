@@ -3,13 +3,21 @@
     "target": "es6",
     "sourceMap": true,
     "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "importHelpers": true,
-    "allowJs": true,
     "outDir": "../../dist/server-root",
     "rootDir": "..",
     "lib": ["es6"],
     "moduleResolution": "node",
-    "types": ["node"]
+    "types": ["node"],
+    "baseUrl": "./",
+    "incremental": true
   },
-  "files": ["./main.ts"]
+  "files": ["./main.ts"],
+  "exclude": [
+    "../node_modules"
+  ]
 }
