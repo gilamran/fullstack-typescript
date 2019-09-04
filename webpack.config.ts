@@ -1,7 +1,6 @@
 import path from 'path';
-import webpack from 'webpack';
+import { Configuration } from 'webpack';
 import ManifestPlugin from 'webpack-manifest-plugin';
-import OpenBrowserPlugin from 'open-browser-webpack-plugin';
 import cssnano from 'cssnano';
 
 import { SERVER_PORT, IS_DEV, WEBPACK_PORT } from './src/server/config';
@@ -11,16 +10,12 @@ const plugins = [new ManifestPlugin()];
 // import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 // plugins.push(new BundleAnalyzerPlugin());
 
-if (IS_DEV) {
-  plugins.push(new OpenBrowserPlugin({ url: `http://localhost:${SERVER_PORT}` }));
-}
-
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 
-const config: webpack.Configuration = {
+const config: Configuration = {
   mode: IS_DEV ? 'development' : 'production',
   devtool: IS_DEV ? 'inline-source-map' : false,
-  entry: ['@babel/polyfill', './src/client/client'],
+  entry: ['core-js', './src/client/client'],
   output: {
     path: path.join(__dirname, 'dist', 'statics'),
     filename: `[name]-[hash:8]-bundle.js`,
@@ -57,7 +52,7 @@ const config: webpack.Configuration = {
             loader: 'css-loader',
             options: {
               modules: true,
-              camelCase: true,
+              localsConvention: 'camelCase',
               sourceMap: IS_DEV,
             },
           },
@@ -78,6 +73,8 @@ const config: webpack.Configuration = {
   },
   devServer: {
     port: WEBPACK_PORT,
+    open: IS_DEV,
+    openPage: `http://localhost:${SERVER_PORT}`
   },
   plugins,
   externals: {
