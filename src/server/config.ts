@@ -9,8 +9,8 @@ if (IS_DEV) {
 const { version: VERSION } = require(findUp.sync('package.json'));
 
 // server
-const SERVER_PORT = process.env.PORT || 3001;
-const WEBPACK_PORT = 8086; // For dev environment only
+const SERVER_PORT = process.env.PORT || 3000;
+const WEBPACK_PORT = 8085; // For dev environment only
 
 export {
   IS_DEV,

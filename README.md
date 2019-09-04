@@ -72,6 +72,7 @@ git push -u origin master
 - `npm run test` - Runs jest tests
 - `npm run build` - `dist` folder will include all the needed files, both client (Bundle) and server.
 - `npm start` - Just runs `node ./dist/server/server.js`
+- `npm start:prod` - sets `NODE_ENV` to `production` and then runs `node ./dist/server/server.js`. (Bypassing webpack proxy)
 
 ### Config
 
