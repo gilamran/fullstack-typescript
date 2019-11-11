@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "esnext",
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "sourceMap": true,
     "noEmit": true,
     "skipLibCheck": true,
@@ -12,5 +13,5 @@
     "types": [],
     "jsx": "react"
   },
-  "files": ["./types.d.ts", "./src/client/client.tsx"]
+  "files": ["./src/client/client.tsx"]
 }

@@ -1,6 +1,5 @@
-import * as express from 'express';
-import * as path from 'path';
-import { SERVER_PORT } from './config';
+import express from 'express';
+import path from 'path';
 import { apiRouter } from './routes/api-router';
 import { pagesRouter } from './routes/pages-router';
 import { staticsRouter } from './routes/statics-router';
@@ -19,6 +18,6 @@ app.use(apiRouter());
 app.use(staticsRouter());
 app.use(pagesRouter());
 
-app.listen(SERVER_PORT, () => {
-  console.log(`App listening on port ${SERVER_PORT}!`);
+app.listen(config.SERVER_PORT, () => {
+  console.log(`App listening on port ${config.SERVER_PORT}!`);
 });

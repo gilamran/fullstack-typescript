@@ -1,6 +1,5 @@
 import Grid from '@material-ui/core/Grid';
-import * as React from 'react';
-import { hot } from 'react-hot-loader';
+import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { About } from './components/About';
 // Pages
@@ -8,19 +7,15 @@ import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { UsersList } from './components/UsersList';
 
-const AppImpl = () => (
+export const App = () => (
   <BrowserRouter>
-    <div>
-      <Grid container spacing={24}>
-        <Header />
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/about' component={About} />
-          <Route path='/users-list' component={UsersList} />
-        </Switch>
-      </Grid>
-    </div>
+    <Grid container spacing={2}>
+      <Header />
+      <Switch>
+        <Route exact path='/' component={Home} />
+        <Route path='/about' component={About} />
+        <Route path='/users-list' component={UsersList} />
+      </Switch>
+    </Grid>
   </BrowserRouter>
 );
-
-export const App = hot(module)(AppImpl);
