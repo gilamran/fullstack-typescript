@@ -2,18 +2,18 @@ import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import Toolbar from '@material-ui/core/Toolbar';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const Header: React.FunctionComponent = () => (
   <AppBar position='static' color='default'>
     <Toolbar>
-      <Button color='primary' component={(p: any) => <Link to='/' {...p} />}>
+      <Button color='primary' component={RouterLink} to='/'>
         Home
       </Button>
-      <Button color='primary' component={(p: any) => <Link to='/users-list' {...p} />}>
+      <Button color='primary' component={RouterLink} to='/users-list'>
         Example Users List
       </Button>
-      <Button color='primary' component={(p: any) => <Link to='/about' {...p} />}>
+      <Button color='primary' component={RouterLink} to='/about'>
         About
       </Button>
     </Toolbar>
