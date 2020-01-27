@@ -12,7 +12,13 @@ function getManifestFromWebpack(): Promise<any> {
   });
 }
 
+let manifestCache: any;
+
 export async function getManifest() {
+  if (manifestCache) {
+    return manifestCache;
+  }
+
   let manifestStr: string;
   if (IS_DEV) {
     // load from webpack dev server
@@ -22,5 +28,6 @@ export async function getManifest() {
     manifestStr = fs.readFileSync(path.join(process.cwd(), 'dist', 'statics', 'manifest.json'), 'utf-8').toString();
   }
   const manifest = JSON.parse(manifestStr);
+  manifestCache = manifest;
   return manifest;
 }
