@@ -15,7 +15,7 @@ const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const config: Configuration = {
   mode: IS_DEV ? 'development' : 'production',
   devtool: IS_DEV ? 'inline-source-map' : false,
-  entry: ['core-js', './src/client/client'],
+  entry: ['./src/client/client'],
   output: {
     path: path.join(__dirname, 'dist', 'statics'),
     filename: `[name]-[hash:8]-bundle.js`,
@@ -27,11 +27,18 @@ const config: Configuration = {
   optimization: {
     splitChunks: {
       cacheGroups: {
-        commons: {
+        vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
+          priority: 10,
         },
+        material: {
+          test: /[\\/]node_modules[\\/]@material-ui[\\/]/,
+          name: 'material-ui',
+          chunks: 'all',
+          priority: 20,
+        }
       },
     },
   },
