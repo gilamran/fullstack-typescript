@@ -9,7 +9,7 @@ import { UsersList } from './components/UsersList';
 
 const useStyles = makeStyles(() => ({
   main: {
-    margin: 8
+    margin: 8,
   },
 }));
 

@@ -4,17 +4,20 @@ export const users: IUserDTO[] = [
   {
     imageUrl: '/statics/gil.jpg',
     userId: '1',
-    userName: 'Gil Amran',
+    firstName: 'Gil',
+    lastName: 'Amran',
   },
   {
     imageUrl: '/statics/noa.jpg',
     userId: '2',
-    userName: 'Noa Tevel',
+    firstName: 'Noa',
+    lastName: 'Tevel',
   },
   {
     imageUrl: '/statics/john.jpg',
     userId: '3',
-    userName: 'John Doe',
+    firstName: 'John',
+    lastName: 'Doe',
   },
 ];
 

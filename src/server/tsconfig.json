@@ -10,16 +10,12 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "outDir": "../../dist/server-root",
-    "rootDir": "..",
+    "outDir": "../../dist/server",
     "lib": ["es6"],
     "moduleResolution": "node",
     "types": ["node"],
-    "baseUrl": "./",
     "incremental": true
   },
   "files": ["./main.ts"],
-  "exclude": [
-    "../node_modules"
-  ]
+  "references": [{ "path": "../shared/tsconfig.json" }]
 }

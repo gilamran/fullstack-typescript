@@ -8,10 +8,9 @@
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
-    "outDir": "./dist",
-    "lib": ["es2015", "dom"],
-    "types": [],
-    "jsx": "react"
+    "outDir": "../../dist/shared",
+    "lib": ["es2015"],
+    "composite": true
   },
-  "files": ["./src/client/client.tsx"]
+  "include": ["./**/*.ts"]
 }
