@@ -14,8 +14,10 @@
     "lib": ["es6"],
     "moduleResolution": "node",
     "types": ["node"],
-    "incremental": true
+    "incremental": true,
+    "composite": true
   },
-  "files": ["./main.ts"],
-  "references": [{ "path": "../shared/tsconfig.json" }]
+  "include": ["**/*.ts"],
+  "exclude": ["**/*.test.ts"],
+  "references": [{ "path": "../shared" }]
 }

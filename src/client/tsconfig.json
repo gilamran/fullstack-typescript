@@ -11,8 +11,10 @@
     "outDir": "../../dist/client",
     "lib": ["es2015", "dom"],
     "types": [],
-    "jsx": "react"
+    "jsx": "react",
+    "composite": true
   },
-  "files": ["./client.tsx"],
-  "references": [{ "path": "../shared/tsconfig.json" }]
+  "include": ["**/*.ts", "**/*.tsx"],
+  "exclude": ["**/*.test.ts", "**/*.test.tsx"],
+  "references": [{ "path": "../shared" }]
 }
