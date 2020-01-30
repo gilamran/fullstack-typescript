@@ -11,6 +11,7 @@ const plugins = [new ManifestPlugin()];
 // plugins.push(new BundleAnalyzerPlugin());
 
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
+const targets = IS_DEV ? { chrome: '79', firefox: '72' } : '> 0.25%, not dead';
 
 const config: Configuration = {
   mode: IS_DEV ? 'development' : 'production',
@@ -25,6 +26,7 @@ const config: Configuration = {
     extensions: ['.js', '.ts', '.tsx'],
   },
   optimization: {
+    minimize: !IS_DEV,
     splitChunks: {
       cacheGroups: {
         vendors: {
@@ -38,7 +40,7 @@ const config: Configuration = {
           name: 'material-ui',
           chunks: 'all',
           priority: 20,
-        }
+        },
       },
     },
   },
@@ -46,8 +48,19 @@ const config: Configuration = {
     rules: [
       {
         test: /\.tsx?$/,
-        loaders: ['babel-loader'],
         exclude: [/node_modules/, nodeModulesPath],
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [['@babel/env', { modules: false, targets }], '@babel/react', '@babel/typescript'],
+            plugins: [
+              '@babel/proposal-numeric-separator',
+              '@babel/plugin-transform-runtime',
+              '@babel/plugin-proposal-class-properties',
+              '@babel/plugin-proposal-object-rest-spread',
+            ],
+          },
+        },
       },
       {
         test: /\.css$/,
@@ -81,11 +94,11 @@ const config: Configuration = {
   devServer: {
     port: WEBPACK_PORT,
     open: IS_DEV,
-    openPage: `http://localhost:${SERVER_PORT}`
+    openPage: `http://localhost:${SERVER_PORT}`,
   },
   plugins,
   externals: {
-    'react': 'React',
+    react: 'React',
     'react-dom': 'ReactDOM',
   },
 };
