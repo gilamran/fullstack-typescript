@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "ES2019",
     "sourceMap": true,
     "module": "commonjs",
     "esModuleInterop": true,
@@ -11,7 +11,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "outDir": "../../dist/server",
-    "lib": ["es6"],
+    "lib": ["ES2019"],
     "moduleResolution": "node",
     "types": ["node"],
     "incremental": true,

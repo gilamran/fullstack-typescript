@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ES2019",
     "moduleResolution": "node",
     "esModuleInterop": true,
     "declaration": true,
@@ -9,7 +9,7 @@
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
     "outDir": "../../dist/shared",
-    "lib": ["es2015"],
+    "lib": ["ES2019"],
     "composite": true
   },
   "include": ["./**/*.ts"],
