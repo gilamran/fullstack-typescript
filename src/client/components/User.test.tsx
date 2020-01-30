@@ -9,7 +9,8 @@ import { User } from './User';
 describe('<User/>', () => {
   const user: IUserDTO = {
     userId: '123',
-    userName: 'Gil Amran',
+    firstName: 'Gil',
+    lastName: 'Amran',
     imageUrl: '/statics/gil.jpg',
   };
   const MUIShallow = createShallow();
