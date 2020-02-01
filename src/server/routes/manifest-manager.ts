@@ -12,22 +12,22 @@ function getManifestFromWebpack(): Promise<any> {
   });
 }
 
-let manifestCache: any;
+let manifestStrCache: any;
 
 export async function getManifest() {
-  if (manifestCache) {
-    return manifestCache;
-  }
-
   let manifestStr: string;
   if (IS_DEV) {
     // load from webpack dev server
     manifestStr = await getManifestFromWebpack();
   } else {
-    // read from file system
-    manifestStr = fs.readFileSync(path.join(process.cwd(), 'dist', 'statics', 'manifest.json'), 'utf-8').toString();
+    if (manifestStrCache) {
+      manifestStr = manifestStrCache;
+    } else {
+      // read from file system
+      manifestStr = fs.readFileSync(path.join(process.cwd(), 'dist', 'statics', 'manifest.json'), 'utf-8').toString();
+      manifestStrCache = manifestStr;
+    }
   }
   const manifest = JSON.parse(manifestStr);
-  manifestCache = manifest;
   return manifest;
 }
