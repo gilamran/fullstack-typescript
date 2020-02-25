@@ -20,6 +20,7 @@ const config: Configuration = {
   output: {
     path: path.join(__dirname, 'dist', 'statics'),
     filename: `[name]-[hash:8]-bundle.js`,
+    chunkFilename: '[name]-[hash:8]-bundle.js',
     publicPath: '/statics/',
   },
   resolve: {
