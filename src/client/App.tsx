@@ -1,11 +1,12 @@
 import { CssBaseline, makeStyles } from '@material-ui/core';
-import React from 'react';
+import React, { lazy } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { About } from './components/About';
 // Pages
 import { Header } from './components/Header';
 import { Home } from './components/Home';
 import { UsersList } from './components/UsersList';
+import { LazyLoadingExample } from './components/LazyLoadingExample';
 
 const useStyles = makeStyles(() => ({
   main: {
@@ -23,8 +24,9 @@ export const App = () => {
       <main className={classes.main}>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/about' component={About} />
           <Route path='/users-list' component={UsersList} />
+          <Route path='/lazy-example' component={LazyLoadingExample} />
+          <Route path='/about' component={About} />
         </Switch>
       </main>
     </BrowserRouter>

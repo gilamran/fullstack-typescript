@@ -11,7 +11,10 @@ export const Header: React.FunctionComponent = () => (
         Home
       </Button>
       <Button color='primary' component={RouterLink} to='/users-list'>
-        Example Users List
+        Fetch Example
+      </Button>
+      <Button color='primary' component={RouterLink} to='/lazy-example'>
+        Lazy example
       </Button>
       <Button color='primary' component={RouterLink} to='/about'>
         About
