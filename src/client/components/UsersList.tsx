@@ -39,7 +39,7 @@ export class UsersList extends React.Component<any, IState> {
               <List>
                 {this.state.users.map(user => (
                   <ListItem key={user.userId}>
-                    <NavLink to={`/users-list/${user.userId}`}>{getUserFullName(user)}</NavLink>
+                    <NavLink to={`/fetch-example/${user.userId}`}>{getUserFullName(user)}</NavLink>
                   </ListItem>
                 ))}
               </List>
@@ -49,7 +49,7 @@ export class UsersList extends React.Component<any, IState> {
         <Grid item xs={12}>
           <Route
             exact
-            path='/users-list/:userId'
+            path='/fetch-example/:userId'
             render={props => <User user={this.getUserById(props.match.params.userId)} />}
           />
         </Grid>
