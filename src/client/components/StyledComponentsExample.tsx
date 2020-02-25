@@ -15,7 +15,7 @@ const CustomButton = styled(Button)`
 
 export const StyledComponentsExample: React.FunctionComponent = () => (
   <Card>
-    <CustomCardHeader title='FullStack React with TypeScript' />
+    <CustomCardHeader title='Styled Component Example' />
     <CardContent>
       <Typography>
         This is an example of styled component.
