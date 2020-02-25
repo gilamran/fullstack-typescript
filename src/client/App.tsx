@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'; // Pages
 import { Header } from './components/Header';
 import { SideMenu } from './components/SideMenu';
 import { Home } from './components/Home';
+import { Usage } from './components/Usage';
 import { LazyLoadingExample } from './components/LazyLoadingExample';
 import { RouterExample } from './components/RouterExample';
 import { StyledComponentsExample } from './components/StyledComponentsExample';
@@ -36,6 +37,7 @@ export const App = () => {
           <div className={classes.toolbar} />
           <Switch>
             <Route exact path='/' component={Home} />
+            <Route exact path='/usage' component={Usage} />
             <Route path='/fetch-example' component={UsersList} />
             <Route path='/lazy-example' component={LazyLoadingExample} />
             <Route path='/styled-example' component={StyledComponentsExample} />
