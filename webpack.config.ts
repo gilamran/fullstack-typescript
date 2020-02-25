@@ -95,6 +95,7 @@ const config: Configuration = {
   },
   devServer: {
     port: WEBPACK_PORT,
+    overlay: IS_DEV,
     open: IS_DEV,
     openPage: `http://localhost:${SERVER_PORT}`,
   },
