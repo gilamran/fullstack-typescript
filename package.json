@@ -16,7 +16,7 @@
     "build-client": "cross-env NODE_ENV=production TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack -p",
     "build-server": "tsc -b src",
     "dev-client": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack-config.json\" webpack-dev-server -w",
-    "dev-server": "tsc-watch --noClear -b ./src/tsconfig.json --onSuccess \"node index.js\"",
+    "dev-server": "tsc-watch --noClear -b ./src/tsconfig.json --onSuccess \"node --enable-source-maps index.js\"",
     "dev": "concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run dev-server\" \"npm run dev-client\"",
     "build": "concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run build-server\" \"npm run build-client\""
   },
