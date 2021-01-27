@@ -1,11 +1,11 @@
 import path from 'path';
 import { Configuration } from 'webpack';
-import ManifestPlugin from 'webpack-manifest-plugin';
+import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import cssnano from 'cssnano';
 
 import { SERVER_PORT, IS_DEV, WEBPACK_PORT } from './src/server/config';
 
-const plugins = [new ManifestPlugin()];
+const plugins = [new WebpackManifestPlugin()];
 
 // import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 // plugins.push(new BundleAnalyzerPlugin());
@@ -19,8 +19,8 @@ const config: Configuration = {
   entry: ['./src/client/client'],
   output: {
     path: path.join(__dirname, 'dist', 'statics'),
-    filename: `[name]-[hash:8]-bundle.js`,
-    chunkFilename: '[name]-[hash:8]-bundle.js',
+    filename: `[name]-[chunkhash]-bundle.js`,
+    chunkFilename: '[name]-[chunkhash]-bundle.js',
     publicPath: '/statics/',
   },
   resolve: {
@@ -62,6 +62,12 @@ const config: Configuration = {
               '@babel/plugin-proposal-object-rest-spread',
             ],
           },
+        },
+      },
+      {
+        test: /\.m?js/,
+        resolve: {
+          fullySpecified: false,
         },
       },
       {
