@@ -1,50 +1,35 @@
-import { CssBaseline, makeStyles } from '@material-ui/core';
-import { createStyles, Theme } from '@material-ui/core/styles';
+import { Box, CssBaseline, Toolbar } from '@mui/material';
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'; // Pages
 import { Header } from './components/Header';
-import { SideMenu } from './components/SideMenu';
 import { Home } from './components/Home';
-import { Usage } from './components/Usage';
 import { LazyLoadingExample } from './components/LazyLoadingExample';
 import { RouterExample } from './components/RouterExample';
-import { StyledComponentsExample } from './components/StyledComponentsExample';
+import { SideMenu } from './components/SideMenu';
+import { StyledComponentExample } from './components/StyledComponentExample';
+import { Usage } from './components/Usage';
 import { UsersList } from './components/UsersList';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      display: 'flex',
-    },
-    main: {
-      flexGrow: 1,
-      padding: theme.spacing(3),
-    },
-    toolbar: theme.mixins.toolbar,
-  }),
-);
-
 export const App = () => {
-  const classes = useStyles({});
 
   return (
     <BrowserRouter>
-      <div className={classes.root}>
+      <Box sx={{ display: 'flex' }}>
         <CssBaseline />
         <Header />
         <SideMenu />
-        <main className={classes.main}>
-          <div className={classes.toolbar} />
+        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Toolbar />
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/usage' element={<Usage />} />
             <Route path='/fetch-example' element={<UsersList />} />
             <Route path='/lazy-example' element={<LazyLoadingExample />} />
-            <Route path='/styled-example' element={<StyledComponentsExample />} />
+            <Route path='/styled-example' element={<StyledComponentExample />} />
             <Route path='/router-example/:slug' element={<RouterExample />} />
           </Routes>
-        </main>
-      </div>
+        </Box>
+      </Box>
     </BrowserRouter>
   );
 };

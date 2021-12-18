@@ -1,7 +1,7 @@
-import { Typography, Button } from '@material-ui/core';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardHeader from '@material-ui/core/CardHeader';
+import { Typography, Button } from '@mui/material';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
 import React from 'react';
 import { useNavigate , useLocation, useParams } from 'react-router-dom';
 

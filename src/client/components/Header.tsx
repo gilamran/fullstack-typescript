@@ -1,19 +1,9 @@
-import { AppBar, makeStyles, Toolbar, Typography } from '@material-ui/core';
-import { createStyles, Theme } from '@material-ui/core/styles';
+import { AppBar, Toolbar, Typography } from '@mui/material';
 import React from 'react';
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    appBar: {
-      zIndex: theme.zIndex.drawer + 1,
-    },
-  }),
-);
-
 export const Header: React.FC = () => {
-  const classes = useStyles({});
   return (
-    <AppBar position='fixed' className={classes.appBar}>
+    <AppBar position='fixed' sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
       <Toolbar>
         <Typography variant='h6' noWrap>
           Fullstack TypeScript

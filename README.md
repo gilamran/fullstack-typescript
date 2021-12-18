@@ -67,15 +67,14 @@ git push -u origin master
 
 - [React v17](https://facebook.github.io/react/)
 - [React router v6](https://github.com/ReactTraining/react-router)
-- [Material-ui](https://github.com/mui-org/material-ui)
+- [Material-ui v5](https://github.com/mui-org/material-ui)
 - [Jest](https://github.com/facebook/jest)
-- [Styled Components](https://github.com/styled-components/styled-components)
+- [emotion](https://emotion.sh/docs/introduction)
 - [Axios](https://github.com/mzabriskie/axios) (For Client/Server communication)
 
 ### Usage
 
 - `npm run dev` - Client and server are in watch mode with source maps, opens [http://localhost:3000](http://localhost:3000)
-- `npm run test` - Runs jest tests
 - `npm run lint` - Runs es-lint
 - `npm run build` - `dist` folder will include all the needed files, both client (Bundle) and server.
 - `npm start` - Just runs `node ./dist/server/server.js`

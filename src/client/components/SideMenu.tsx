@@ -1,40 +1,27 @@
-import { Divider, Drawer, List, ListItem, ListItemIcon, ListItemText, makeStyles } from '@material-ui/core';
-import { createStyles, Theme } from '@material-ui/core/styles';
-import UsageIcon from '@material-ui/icons/Code';
-import HomeIcon from '@material-ui/icons/Home';
-import RouterIcon from '@material-ui/icons/Storage';
-import FetchIcon from '@material-ui/icons/CloudDownload';
-import StyledIcon from '@material-ui/icons/Style';
-import LazyIcon from '@material-ui/icons/SystemUpdateAlt';
+import FetchIcon from '@mui/icons-material/CloudDownload';
+import UsageIcon from '@mui/icons-material/Code';
+import HomeIcon from '@mui/icons-material/Home';
+import RouterIcon from '@mui/icons-material/Storage';
+import StyledIcon from '@mui/icons-material/Style';
+import LazyIcon from '@mui/icons-material/SystemUpdateAlt';
+import { Divider, Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import Toolbar from '@mui/material/Toolbar';
 
 const drawerWidth = 240;
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    drawer: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-    drawerPaper: {
-      width: drawerWidth,
-    },
-    toolbar: theme.mixins.toolbar,
-  }),
-);
-
 export const SideMenu: React.FC = () => {
-  const classes = useStyles({});
   return (
     <Drawer
-      className={classes.drawer}
       variant='permanent'
-      classes={{
-        paper: classes.drawerPaper,
+      sx={{
+        width: drawerWidth,
+        flexShrink: 0,
+        [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box' },
       }}
     >
-      <div className={classes.toolbar} />
+      <Toolbar />
       <List>
         <ListItem button component={RouterLink} to='/'>
           <ListItemIcon>
