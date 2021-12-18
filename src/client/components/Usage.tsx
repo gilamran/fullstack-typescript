@@ -15,9 +15,6 @@ export const Usage: React.FC = () => (
           <a href='http://localhost:3000'>http://localhost:3000</a>
         </Typography>
         <Typography>
-          <strong>npm run test</strong> - Runs jest tests
-        </Typography>
-        <Typography>
           <strong>npm run lint</strong> - Runs es-lint
         </Typography>
         <Typography>

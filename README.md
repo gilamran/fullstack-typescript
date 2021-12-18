@@ -68,7 +68,6 @@ git push -u origin master
 - [React v17](https://facebook.github.io/react/)
 - [React router v6](https://github.com/ReactTraining/react-router)
 - [Material-ui v5](https://github.com/mui-org/material-ui)
-- [Jest](https://github.com/facebook/jest)
 - [emotion](https://emotion.sh/docs/introduction)
 - [Axios](https://github.com/mzabriskie/axios) (For Client/Server communication)
 
