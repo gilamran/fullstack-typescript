@@ -7,14 +7,7 @@ import FetchIcon from '@material-ui/icons/CloudDownload';
 import StyledIcon from '@material-ui/icons/Style';
 import LazyIcon from '@material-ui/icons/SystemUpdateAlt';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-
-class NavLinkMui extends React.Component<any> {
-  render() {
-      const { forwardedRef, to, ...props } = this.props
-      return <NavLink {...props} ref={forwardedRef} to={to} />
-  }
-}
+import { Link as RouterLink } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -31,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-export const SideMenu: React.FunctionComponent = () => {
+export const SideMenu: React.FC = () => {
   const classes = useStyles({});
   return (
     <Drawer
@@ -43,13 +36,13 @@ export const SideMenu: React.FunctionComponent = () => {
     >
       <div className={classes.toolbar} />
       <List>
-        <ListItem button component={NavLinkMui} to='/'>
+        <ListItem button component={RouterLink} to='/'>
           <ListItemIcon>
             <HomeIcon />
           </ListItemIcon>
           <ListItemText primary='Home' />
         </ListItem>
-        <ListItem button component={NavLinkMui} to='/usage'>
+        <ListItem button component={RouterLink} to='/usage'>
           <ListItemIcon>
             <UsageIcon />
           </ListItemIcon>
@@ -58,25 +51,25 @@ export const SideMenu: React.FunctionComponent = () => {
       </List>
       <Divider />
       <List>
-        <ListItem button component={NavLinkMui} to='/fetch-example'>
+        <ListItem button component={RouterLink} to='/fetch-example'>
           <ListItemIcon>
             <FetchIcon />
           </ListItemIcon>
           <ListItemText primary='Fetch' />
         </ListItem>
-        <ListItem button component={NavLinkMui} to='/lazy-example'>
+        <ListItem button component={RouterLink} to='/lazy-example'>
           <ListItemIcon>
             <LazyIcon />
           </ListItemIcon>
           <ListItemText primary='Lazy Loading' />
         </ListItem>
-        <ListItem button component={NavLinkMui} to='/styled-example'>
+        <ListItem button component={RouterLink} to='/styled-example'>
           <ListItemIcon>
             <StyledIcon />
           </ListItemIcon>
           <ListItemText primary='Styled Components' />
         </ListItem>
-        <ListItem button component={NavLinkMui} to='/router-example/1234'>
+        <ListItem button component={RouterLink} to='/router-example/1234'>
           <ListItemIcon>
             <RouterIcon />
           </ListItemIcon>

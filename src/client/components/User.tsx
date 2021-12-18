@@ -10,7 +10,7 @@ interface IProps {
   user: IUserDTO;
 }
 
-export const User: React.FunctionComponent<IProps> = ({ user }) => (
+export const User: React.FC<IProps> = ({ user }) => (
   <Card>
     <CardHeader title={`User: ${getUserFullName(user)}`} />
     <CardContent>

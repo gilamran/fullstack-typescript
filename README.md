@@ -39,7 +39,7 @@ git push -u origin master
 
 ## Requirements
 
-- `NodeJs 12.13+`, `Chrome 79+` or `FireFox 72+`
+- `NodeJs 16.13.+`, `Chrome 79+` or `FireFox 72+`
 
 ### Directory Layout
 
@@ -65,8 +65,8 @@ git push -u origin master
 
 ### What's included
 
-- [React v16](https://facebook.github.io/react/)
-- [React router v4](https://github.com/ReactTraining/react-router)
+- [React v17](https://facebook.github.io/react/)
+- [React router v6](https://github.com/ReactTraining/react-router)
 - [Material-ui](https://github.com/mui-org/material-ui)
 - [Jest](https://github.com/facebook/jest)
 - [Styled Components](https://github.com/styled-components/styled-components)

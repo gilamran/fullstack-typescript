@@ -9,7 +9,8 @@ const useStyles = makeStyles((theme: Theme) =>
     },
   }),
 );
-export const Header: React.FunctionComponent = () => {
+
+export const Header: React.FC = () => {
   const classes = useStyles({});
   return (
     <AppBar position='fixed' className={classes.appBar}>

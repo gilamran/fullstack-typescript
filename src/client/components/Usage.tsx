@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 
-export const Usage: React.FunctionComponent = () => (
+export const Usage: React.FC = () => (
   <Grid item xs={12}>
     <Card>
       <CardHeader title='Usage' />

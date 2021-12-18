@@ -7,7 +7,7 @@ const LazilyLoadedContent = lazy(() => import(/* webpackChunkName: "LazilyLoaded
 
 const Spinner = () => (<div>LOADING...</div>);
 
-export const LazyLoadingExample: React.FunctionComponent = () => (
+export const LazyLoadingExample: React.FC = () => (
   <Card>
     <CardHeader title='Lazy Loading Example' />
     <CardContent>

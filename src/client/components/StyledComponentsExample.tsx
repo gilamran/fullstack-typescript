@@ -13,7 +13,7 @@ const CustomButton = styled(Button)`
   background-color: green;
 `;
 
-export const StyledComponentsExample: React.FunctionComponent = () => (
+export const StyledComponentsExample: React.FC = () => (
   <Card>
     <CustomCardHeader title='Styled Component Example' />
     <CardContent>

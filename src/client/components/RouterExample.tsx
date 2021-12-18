@@ -3,10 +3,10 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardHeader from '@material-ui/core/CardHeader';
 import React from 'react';
-import { useHistory, useLocation, useParams } from 'react-router-dom';
+import { useNavigate , useLocation, useParams } from 'react-router-dom';
 
-export const RouterExample: React.FunctionComponent = () => {
-  const history = useHistory();
+export const RouterExample: React.FC = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const { slug } = useParams();
 
@@ -20,8 +20,8 @@ export const RouterExample: React.FunctionComponent = () => {
         <Typography>
           "slug" parameter: <strong>{slug}</strong>
         </Typography>
-        <Button variant='contained' color='primary' onClick={() => history.goBack()}>
-          history.goBack()
+        <Button variant='contained' color='primary' onClick={() => navigate(-1)}>
+          navigate(-1)
         </Button>
       </CardContent>
     </Card>
