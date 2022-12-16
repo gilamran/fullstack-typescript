@@ -1,5 +1,6 @@
 import path from 'path';
-import { Configuration } from 'webpack';
+import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import type { Configuration } from 'webpack';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 import cssnano from 'cssnano';
 
@@ -12,6 +13,14 @@ const plugins = [new WebpackManifestPlugin({})];
 
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
 const targets = IS_DEV ? { chrome: '79', firefox: '72' } : '> 0.25%, not dead';
+
+const devServer: DevServerConfiguration = {
+  port: WEBPACK_PORT,
+  client: {
+    overlay: IS_DEV,
+  },
+  open: IS_DEV ? [`http://localhost:${SERVER_PORT}`] : false,
+};
 
 const config: Configuration = {
   mode: IS_DEV ? 'development' : 'production',
@@ -99,12 +108,7 @@ const config: Configuration = {
       },
     ],
   },
-  devServer: {
-    port: WEBPACK_PORT,
-    overlay: IS_DEV,
-    open: IS_DEV,
-    openPage: `http://localhost:${SERVER_PORT}`,
-  },
+  devServer,
   plugins,
   externals: {
     react: 'React',
