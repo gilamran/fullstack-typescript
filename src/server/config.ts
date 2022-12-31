@@ -1,12 +1,11 @@
 import dotenv from 'dotenv';
-import findUp from 'find-up';
 import path from 'path';
 import fs from 'fs';
 
 const IS_DEV = process.env.NODE_ENV !== 'production';
 
 if (IS_DEV) {
-  dotenv.config({ path: findUp.sync('.env') });
+  dotenv.config({ path: path.join(process.cwd(), '.env') });
 }
 
 const packageJsonPath = path.join(process.cwd(), 'package.json');

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "experimentalDecorators": true,
+    "outDir": "./dist",
+    "lib": ["es2015", "dom"],
+    "types": [],
+    "jsx": "react"
+  },
+  "files": ["./types.d.ts"],
+  "include": ["./src/client/**/*.ts", "./src/client/**/*.tsx", "./src/shared/**/*.ts"]
+}

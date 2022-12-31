@@ -1,18 +1,22 @@
+import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import path from 'path';
+import type { Configuration, WebpackPluginInstance } from 'webpack';
 import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
-import type { Configuration } from 'webpack';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
-import cssnano from 'cssnano';
 
-import { SERVER_PORT, IS_DEV, WEBPACK_PORT } from './src/server/config';
+import { IS_DEV, SERVER_PORT, WEBPACK_PORT } from './src/server/config';
 
-const plugins = [new WebpackManifestPlugin({})];
+const plugins: WebpackPluginInstance[] = [new ForkTsCheckerWebpackPlugin(), new WebpackManifestPlugin({})];
+
+if (IS_DEV) {
+  plugins.push(new ReactRefreshPlugin());
+}
 
 // import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 // plugins.push(new BundleAnalyzerPlugin());
 
 const nodeModulesPath = path.resolve(__dirname, 'node_modules');
-const targets = IS_DEV ? { chrome: '79', firefox: '72' } : '> 0.25%, not dead';
 
 const devServer: DevServerConfiguration = {
   port: WEBPACK_PORT,
@@ -28,8 +32,8 @@ const config: Configuration = {
   entry: ['./src/client/client'],
   output: {
     path: path.join(__dirname, 'dist', 'statics'),
-    filename: `[name]-[chunkhash]-bundle.js`,
-    chunkFilename: '[name]-[chunkhash]-bundle.js',
+    filename: `[name]-[contenthash]-bundle.js`,
+    chunkFilename: '[name]-[contenthash]-bundle.js',
     publicPath: '/statics/',
   },
   resolve: {
@@ -57,50 +61,15 @@ const config: Configuration = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        exclude: [/node_modules/, nodeModulesPath],
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [['@babel/env', { modules: false, targets }], '@babel/react', '@babel/typescript'],
-            plugins: [
-              '@babel/proposal-numeric-separator',
-              '@babel/plugin-transform-runtime',
-              ['@babel/plugin-proposal-decorators', { legacy: true }],
-              ['@babel/plugin-proposal-class-properties'],
-              '@babel/plugin-proposal-object-rest-spread',
-            ],
-          },
-        },
-      },
-      {
         test: /\.m?js/,
         resolve: {
           fullySpecified: false,
         },
       },
       {
-        test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader',
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: true,
-              localsConvention: 'camelCase',
-              sourceMap: IS_DEV,
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: IS_DEV,
-              plugins: IS_DEV ? [cssnano()] : [],
-            },
-          },
-        ],
+        test: /\.tsx?$/,
+        use: ['babel-loader'],
+        exclude: [/node_modules/, nodeModulesPath],
       },
       {
         test: /.jpe?g$|.gif$|.png$|.svg$|.woff$|.woff2$|.ttf$|.eot$/,
@@ -108,12 +77,9 @@ const config: Configuration = {
       },
     ],
   },
+  target: 'web',
   devServer,
   plugins,
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-  },
 };
 
 export default config;

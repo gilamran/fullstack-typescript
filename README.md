@@ -11,8 +11,8 @@ Just clone this repository into your own project folder. and start working
 ```bash
 git clone https://github.com/gilamran/fullstack-typescript.git <MyProjectName>
 cd <MyProjectName>
-npm install
-npm run dev
+yarn
+yarn dev
 ```
 
 If you want to detach from this repository into your own repository do this:
@@ -53,6 +53,7 @@ git push -u origin master
 │   ├── /shared/                      # The shared code between the client and the server
 ├── /assets/                          # images, css, jsons etc.
 ├── .eslintrc                         # es-lint configuration
+├── .babel.config.js                  # babel configuration
 ├── .prettierec                       # prettier configuration
 ├── .gitignore                        # ignored git files and folders
 ├── .nvmrc                            # Force nodejs version
@@ -65,7 +66,7 @@ git push -u origin master
 
 ### What's included
 
-- [React v17](https://facebook.github.io/react/)
+- [React v18](https://facebook.github.io/react/)
 - [React router v6](https://github.com/ReactTraining/react-router)
 - [Material-ui v5](https://github.com/mui-org/material-ui)
 - [emotion](https://emotion.sh/docs/introduction)
@@ -73,11 +74,11 @@ git push -u origin master
 
 ### Usage
 
-- `npm run dev` - Client and server are in watch mode with source maps, opens [http://localhost:3000](http://localhost:3000)
-- `npm run lint` - Runs es-lint
-- `npm run build` - `dist` folder will include all the needed files, both client (Bundle) and server.
-- `npm start` - Just runs `node ./dist/server/server.js`
-- `npm start:prod` - sets `NODE_ENV` to `production` and then runs `node ./dist/server/server.js`. (Bypassing webpack proxy)
+- `yarn dev` - Client and server are in watch mode with source maps, opens [http://localhost:3000](http://localhost:3000)
+- `yarn lint` - Runs es-lint
+- `yarn build` - `dist` folder will include all the needed files, both client (Bundle) and server.
+- `yarn start` - Just runs `node ./dist/server/server.js`
+- `yarn start:prod` - sets `NODE_ENV` to `production` and then runs `node ./dist/server/server.js`. (Bypassing webpack proxy)
 
 ### Config
 
