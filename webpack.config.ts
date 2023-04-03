@@ -2,7 +2,7 @@ import ReactRefreshPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import path from 'path';
 import type { Configuration, WebpackPluginInstance } from 'webpack';
-import type { Configuration as DevServerConfiguration } from "webpack-dev-server";
+import type { Configuration as DevServerConfiguration } from 'webpack-dev-server';
 import { WebpackManifestPlugin } from 'webpack-manifest-plugin';
 
 import { IS_DEV, SERVER_PORT, WEBPACK_PORT } from './src/server/config';
@@ -68,7 +68,10 @@ const config: Configuration = {
       },
       {
         test: /\.tsx?$/,
-        use: ['babel-loader'],
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true,
+        },
         exclude: [/node_modules/, nodeModulesPath],
       },
       {

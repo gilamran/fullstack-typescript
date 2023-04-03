@@ -1,7 +1,7 @@
 import { Router } from 'express';
 import { getManifest } from './manifest-manager';
 
-export function pagesRouter() {
+export function pagesRouter(): Router {
   const router = Router();
 
   router.get(`/**`, async (_, res) => {

@@ -3,7 +3,7 @@ import express from 'express';
 import { Router } from 'express';
 import { IS_DEV, WEBPACK_PORT } from '../config';
 
-export function staticsRouter() {
+export function staticsRouter(): Router {
   const router = Router();
   
   if (IS_DEV) {
