@@ -41,7 +41,7 @@ git push -u origin master
 
 ## Requirements
 
-- `NodeJs 16.13.+`, `Chrome 79+` or `FireFox 72+`
+- `NodeJs 18.12.+`, `Chrome 79+` or `FireFox 72+`
 
 ### Directory Layout
 
