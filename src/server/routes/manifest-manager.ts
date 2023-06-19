@@ -1,33 +1,32 @@
 import fs from 'fs';
 import path from 'path';
-import { IS_DEV, WEBPACK_PORT } from '../config';
+import { IS_DEV } from '../config';
 
-function getManifestFromWebpack(): Promise<any> {
-  return new Promise((resolve, reject) => {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const request = require('request');
-    request.get(`http://localhost:${WEBPACK_PORT}/statics/manifest.json`, {}, (err, data) =>
-      err ? reject(err) : resolve(data.body),
-    );
-  });
-}
-
-let manifestStrCache: any;
+let manifestCache: any;
 
 export async function getManifest() {
-  let manifestStr: string;
-  if (IS_DEV) {
-    // load from webpack dev server
-    manifestStr = await getManifestFromWebpack();
-  } else {
-    if (manifestStrCache) {
-      manifestStr = manifestStrCache;
+  if (!manifestCache) {
+    if (IS_DEV) {
+      // load from vite dev server
+      manifestCache = {
+        '@vite/client': {
+          file: 'http://localhost:5173/@vite/client',
+        },
+        'client.tsx': {
+          file: 'http://localhost:5173/client.tsx',
+        },
+      };
     } else {
       // read from file system
-      manifestStr = fs.readFileSync(path.join(process.cwd(), 'dist', 'statics', 'manifest.json'), 'utf-8').toString();
-      manifestStrCache = manifestStr;
+      const manifestStr = fs
+        .readFileSync(path.join(process.cwd(), 'dist', 'client', 'manifest.json'), 'utf-8')
+        .toString();
+      manifestCache = JSON.parse(manifestStr);
+      Object.keys(manifestCache).map((key) => {
+        manifestCache[key].file = `/${manifestCache[key].file}`;
+      });
     }
   }
-  const manifest = JSON.parse(manifestStr);
-  return manifest;
+
+  return manifestCache;
 }

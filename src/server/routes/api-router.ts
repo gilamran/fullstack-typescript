@@ -12,7 +12,12 @@ export function apiRouter(): Router {
 
   router.get('/api/user/:userId', (req, res) => {
     const userId = req.params.userId;
-    res.json(getUserById(userId));
+    const user = getUserById(userId);
+    if (!user) {
+      res.status(404).send(`User ${userId} not found`);
+      return;
+    }
+    res.json(user);
   });
 
   router.post('/api/set-user', (req, res) => {

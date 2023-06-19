@@ -10,7 +10,7 @@ import { getUserFullName } from '../../shared/utils';
 import { loadUsersAPI } from '../utils/api-facade';
 
 export const UsersList: React.FC = () => {
-  const [users, setUsers] = React.useState<IUserDTO[]>(null);
+  const [users, setUsers] = React.useState<IUserDTO[] | null>(null);
   const [isLoading, setIsLoading] = React.useState(true);
 
   React.useEffect(() => {
@@ -35,17 +35,21 @@ export const UsersList: React.FC = () => {
   }
 
   return (
-      <Grid item xs={12}>
-        <Card>
-          <CardHeader title='Users List' />
-          <CardContent>
+    <Grid item xs={12}>
+      <Card>
+        <CardHeader title='Users List' />
+        <CardContent>
+          {users ? (
             <List>
               {users.map((user) => (
                 <ListItem key={user.userId}>{getUserFullName(user)}</ListItem>
               ))}
             </List>
-          </CardContent>
-        </Card>
-      </Grid>
+          ) : (
+            'No users found'
+          )}
+        </CardContent>
+      </Card>
+    </Grid>
   );
 };

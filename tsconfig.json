@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ES2020",
     "module": "ESNext",
     "moduleResolution": "node",
     "sourceMap": true,
@@ -10,7 +10,7 @@
     "isolatedModules": true,
     "experimentalDecorators": true,
     "outDir": "./dist",
-    "lib": ["es2015", "dom"],
+    "lib": ["ES2020", "dom"],
     "types": [],
     "jsx": "react"
   },

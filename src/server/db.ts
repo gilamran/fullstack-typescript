@@ -21,6 +21,6 @@ export const users: IUserDTO[] = [
   },
 ];
 
-export function getUserById(userId: string): IUserDTO {
-  return users.find(u => u.userId === userId);
+export function getUserById(userId: string): IUserDTO | null {
+  return users.find((u) => u.userId === userId) ?? null;
 }

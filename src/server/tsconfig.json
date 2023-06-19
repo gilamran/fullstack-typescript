@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
+    "target": "ES2020",
     "sourceMap": true,
     "module": "commonjs",
     "esModuleInterop": true,
     "declaration": true,
+    "strict": true,
     "resolveJsonModule": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -12,7 +13,7 @@
     "importHelpers": true,
     "skipLibCheck": true,
     "outDir": "../../dist/server",
-    "lib": ["ES2019"],
+    "lib": ["ES2020"],
     "moduleResolution": "node",
     "types": ["node"],
     "incremental": true,

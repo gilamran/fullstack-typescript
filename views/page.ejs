@@ -13,8 +13,20 @@
         <div class="container">
             <div id="app">Loading...</div>
         </div>
-        <% for(var jsLocation of Object.values(manifest)) {%>
-        <script type="text/javascript" src="<%- jsLocation %>"></script>
-        <% } %>        
+        <% if (IS_DEV) { %>
+            <script type="module">
+                import RefreshRuntime from 'http://localhost:5173/@react-refresh'
+                RefreshRuntime.injectIntoGlobalHook(window)
+                window.$RefreshReg$ = () => {}
+                window.$RefreshSig$ = () => (type) => type
+                window.__vite_plugin_react_preamble_installed__ = true
+            </script>
+        <% } %>
+
+        <% 
+            Object.keys(manifest).forEach((key) => {
+                %><script type="module" src="<%- manifest[key].file %>"></script><%
+            })
+        %>
     </body>
 </html>

@@ -6,7 +6,9 @@
 
 ## Quick Start
 
-Just clone this repository into your own project folder. and start working
+If you're using Github, you can click on the "Use this template" button to create a new repository based on this starter kit.
+
+Otherwise clone this repository into your own project folder. and start working
 
 ```bash
 git clone https://github.com/gilamran/fullstack-typescript.git <MyProjectName>
@@ -28,7 +30,7 @@ git push -u origin master
 - **Simple** to jump into, **Fast** because it is simple.
 - Separate `tsconfig.json` for client and server.
 - Client and server can share code (And types). For example: [IUserDTO.d.ts](https://github.com/gilamran/fullstack-typescript/blob/master/src/shared/IUserDTO.d.ts)
-- The client is bundled using [Webpack](https://webpack.github.io/) because it goes to the browser.
+- The client is bundled using [Vite](https://github.com/vitejs/vite) because it goes to the browser.
 - The server is emitted by [TypeScript](https://github.com/Microsoft/TypeScript) because node now supports es6.
 
 <p align="center"> 
@@ -53,14 +55,12 @@ git push -u origin master
 │   ├── /shared/                      # The shared code between the client and the server
 ├── /assets/                          # images, css, jsons etc.
 ├── .eslintrc                         # es-lint configuration
-├── .babel.config.js                  # babel configuration
 ├── .prettierec                       # prettier configuration
 ├── .gitignore                        # ignored git files and folders
 ├── .nvmrc                            # Force nodejs version
 ├── .env                              # (ignored) Can be used to override environment variables
 ├── index.js                          # The server's entry point
 ├── package.json                      # The list of 3rd party libraries and utilities
-└── tsconfig-for-webpack-config.json  # using TypeScript for the webpack config file
 ├── README.md                         # This file
 ```
 
@@ -78,7 +78,7 @@ git push -u origin master
 - `yarn lint` - Runs es-lint
 - `yarn build` - `dist` folder will include all the needed files, both client (Bundle) and server.
 - `yarn start` - Just runs `node ./dist/server/server.js`
-- `yarn start:prod` - sets `NODE_ENV` to `production` and then runs `node ./dist/server/server.js`. (Bypassing webpack proxy)
+- `yarn start:prod` - sets `NODE_ENV` to `production` and then runs `node ./dist/server/server.js`. (Bypassing vite)
 
 ### Config
 

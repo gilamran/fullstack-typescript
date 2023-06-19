@@ -3,7 +3,7 @@ import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import React, { lazy, Suspense } from 'react';
 
-const LazilyLoadedContent = lazy(() => import(/* webpackChunkName: "LazilyLoadedContent" */ './LazilyLoadedContent'));
+const LazilyLoadedContent = lazy(() => import('./LazilyLoadedContent'));
 
 const Spinner = () => (<div>LOADING...</div>);
 
