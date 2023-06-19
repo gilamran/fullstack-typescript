@@ -88,8 +88,8 @@ All applications require a config mechanism, for example, `SLACK_API_TOKEN`. Thi
 
 #### What's not included
 
-- Universal (Server side rendering)
-- Redux/MobX (State management)
+- Server side rendering
+- Redux/MobX/Zustand (State management)
 
 ---
 
