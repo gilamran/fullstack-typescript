@@ -1,6 +1,7 @@
 import bodyParser from 'body-parser';
 import { Router } from 'express';
 import { users, getUserById } from '../db';
+import { getUserFullName } from '@shared/utils';
 
 export function apiRouter(): Router {
   const router = Router();
@@ -17,6 +18,7 @@ export function apiRouter(): Router {
       res.status(404).send(`User ${userId} not found`);
       return;
     }
+    console.log(`Found ${getUserFullName(user)}`);
     res.json(user);
   });
 

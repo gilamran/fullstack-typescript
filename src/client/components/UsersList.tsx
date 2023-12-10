@@ -5,8 +5,8 @@ import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import React from 'react';
-import { IUserDTO } from '../../shared/IUserDTO';
-import { getUserFullName } from '../../shared/utils';
+import { IUserDTO } from '@shared/IUserDTO';
+import { getUserFullName } from '@shared/utils';
 import { loadUsersAPI } from '../utils/api-facade';
 
 export const UsersList: React.FC = () => {
