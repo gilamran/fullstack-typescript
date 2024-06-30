@@ -19,7 +19,7 @@ export async function getManifest() {
     } else {
       // read from file system
       const manifestStr = fs
-        .readFileSync(path.join(process.cwd(), 'dist', 'client', 'manifest.json'), 'utf-8')
+        .readFileSync(path.join(process.cwd(), 'dist', 'client', '.vite', 'manifest.json'), 'utf-8')
         .toString();
       manifestCache = JSON.parse(manifestStr);
       Object.keys(manifestCache).map((key) => {
