@@ -136,12 +136,19 @@ function changeFiles(projectName) {
   removeTextFromFileByRegex(sideMenuTsxPath, /Divider, /);
 }
 
+function removeThisScript() {
+  const packageJson = fs.readFileSync('package.json').toString();
+  const newPackageJson = packageJson.replace(/"clean-up-example-code": "node clean-up-example-code.js",\n/, '');
+  fs.writeFileSync('package.json', newPackageJson);
+}
+
 async function main() {
   const projectName = await getProjectName();
   createNewReadme(projectName);
   changePackageJson(projectName);
   deleteExampleFiles();
   changeFiles(projectName);
+  removeThisScript();
   console.log('Clean up completed');
 }
 

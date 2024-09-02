@@ -7,6 +7,7 @@
     "node": ">18"
   },
   "scripts": {
+    "clean-up-example-code": "node clean-up-example-code.js && rimraf clean-up-example-code.js",
     "clean": "rimraf dist",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "start": "node index.js",
