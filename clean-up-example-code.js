@@ -67,6 +67,7 @@ function deleteExampleFiles() {
 }
 
 function changePackageJson(projectName) {
+  console.log('Changing package.json file');
   const projectNameCababCase = projectName.toLowerCase().replace(/ /g, '-');
   console.log('Changing package.json file');
   const rawPackageJson = fs.readFileSync('package.json').toString();
@@ -102,6 +103,7 @@ function replaceTextInFile(fileName, textToReplace, newText) {
 }
 
 function changeFiles(projectName) {
+  console.log('Changing files');
   const serverPath = path.join('src', 'server', 'server.ts');
   removeLineFromFile(serverPath, `import { apiRouter } from './routes/api-router';`);
   removeLineFromFile(serverPath, `app.use(apiRouter());`);
@@ -140,6 +142,7 @@ async function main() {
   changePackageJson(projectName);
   deleteExampleFiles();
   changeFiles(projectName);
+  console.log('Clean up completed');
 }
 
 main();
