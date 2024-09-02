@@ -11,7 +11,7 @@ If you're using Github, you can click on the "Use this template" button to creat
 ## Clean example code
 The repo comes with some examples on how to do basic stuff. As this is not really needed in real projects, you can remove them by running:
 ```
-npm run clean-up-example-code
+yarn clean-up-example-code
 ```
 
 ## Manual clone
