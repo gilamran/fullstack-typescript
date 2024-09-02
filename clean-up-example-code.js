@@ -137,9 +137,7 @@ function changeFiles(projectName) {
 }
 
 function removeThisScript() {
-  const packageJson = fs.readFileSync('package.json').toString();
-  const newPackageJson = packageJson.replace(/"clean-up-example-code": "node clean-up-example-code.js",\n/, '');
-  fs.writeFileSync('package.json', newPackageJson);
+  removeLineFromFile('package.json', `"clean-up-example-code": "node clean-up-example-code.js && rimraf clean-up-example-code.js",`);
 }
 
 async function main() {
