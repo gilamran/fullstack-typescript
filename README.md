@@ -8,7 +8,14 @@
 
 If you're using Github, you can click on the "Use this template" button to create a new repository based on this starter kit.
 
-Otherwise clone this repository into your own project folder. and start working
+## Clean example code
+The repo comes with some examples on how to do basic stuff. As this is not really needed in real projects, you can remove them by running:
+```
+npm run clean-up-example-code
+```
+
+## Manual clone
+clone this repository into your own project folder. and start working
 
 ```bash
 git clone https://github.com/gilamran/fullstack-typescript.git <MyProjectName>
