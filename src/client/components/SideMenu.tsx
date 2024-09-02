@@ -4,12 +4,29 @@ import HomeIcon from '@mui/icons-material/Home';
 import RouterIcon from '@mui/icons-material/Storage';
 import StyledIcon from '@mui/icons-material/Style';
 import LazyIcon from '@mui/icons-material/SystemUpdateAlt';
-import { Divider, Drawer, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import Toolbar from '@mui/material/Toolbar';
 
 const drawerWidth = 240;
+
+interface ListItemLinkProps {
+  icon?: React.ReactElement<any>;
+  primary: string;
+  to: string;
+}
+
+function ListItemLink(props: ListItemLinkProps) {
+  const { icon, primary, to } = props;
+
+  return (
+    <ListItemButton component={RouterLink} to={to}>
+      {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
+      <ListItemText primary={primary} />
+    </ListItemButton>
+  );
+}
 
 export const SideMenu: React.FC = () => {
   return (
@@ -23,44 +40,26 @@ export const SideMenu: React.FC = () => {
     >
       <Toolbar />
       <List>
-        <ListItem button component={RouterLink} to='/'>
-          <ListItemIcon>
-            <HomeIcon />
-          </ListItemIcon>
-          <ListItemText primary='Home' />
+        <ListItem disablePadding>
+          <ListItemLink to='/' primary='Home' icon={<HomeIcon />} />
         </ListItem>
-        <ListItem button component={RouterLink} to='/usage'>
-          <ListItemIcon>
-            <UsageIcon />
-          </ListItemIcon>
-          <ListItemText primary='Usage' />
+        <ListItem disablePadding>
+          <ListItemLink to='/usage' primary='Usage' icon={<UsageIcon />} />
         </ListItem>
       </List>
       <Divider />
       <List>
-        <ListItem button component={RouterLink} to='/fetch-example'>
-          <ListItemIcon>
-            <FetchIcon />
-          </ListItemIcon>
-          <ListItemText primary='Fetch' />
+        <ListItem disablePadding>
+          <ListItemLink to='/fetch-example' primary='Fetch' icon={<FetchIcon />} />
         </ListItem>
-        <ListItem button component={RouterLink} to='/lazy-example'>
-          <ListItemIcon>
-            <LazyIcon />
-          </ListItemIcon>
-          <ListItemText primary='Lazy Loading' />
+        <ListItem disablePadding>
+          <ListItemLink to='/lazy-example' primary='Lazy Loading' icon={<LazyIcon />} />
         </ListItem>
-        <ListItem button component={RouterLink} to='/styled-example'>
-          <ListItemIcon>
-            <StyledIcon />
-          </ListItemIcon>
-          <ListItemText primary='Styled Components' />
+        <ListItem disablePadding>
+          <ListItemLink to='/styled-example' primary='Styled Components' icon={<StyledIcon />} />
         </ListItem>
-        <ListItem button component={RouterLink} to='/router-example/1234'>
-          <ListItemIcon>
-            <RouterIcon />
-          </ListItemIcon>
-          <ListItemText primary='React-Router' />
+        <ListItem disablePadding>
+          <ListItemLink to='/router-example/1234' primary='React-Router' icon={<RouterIcon />} />
         </ListItem>
       </List>
     </Drawer>
