@@ -78,6 +78,6 @@
     "tsconfig-paths": "^4.2.0",
     "tslib": "^2.7.0",
     "typescript": "^5.5.4",
-    "vite": "^5.4.2"
+    "vite": "^5.4.6"
   }
 }
