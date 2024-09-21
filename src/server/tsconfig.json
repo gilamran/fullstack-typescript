@@ -11,6 +11,7 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "skipLibCheck": true,
+    "strict": true,
     "outDir": "../../dist",
     "rootDir": "..",
     "lib": ["ES2020"],
