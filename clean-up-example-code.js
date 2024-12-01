@@ -102,15 +102,25 @@ function replaceTextInFile(fileName, textToReplace, newText) {
   fs.writeFileSync(fileName, newFileContent);
 }
 
+function replaceTextFromFileByRegex(fileName, regex, newText) {
+  const fileContent = fs.readFileSync(fileName).toString();
+  const newFileContent = fileContent.replace(regex, newText);
+  fs.writeFileSync(fileName, newFileContent);
+}
+
 function changeFiles(projectName) {
   console.log('Changing files');
+
+  // // server.ts
   const serverPath = path.join('src', 'server', 'server.ts');
   removeLineFromFile(serverPath, `import { apiRouter } from './routes/api-router';`);
   removeLineFromFile(serverPath, `app.use(apiRouter());`);
 
+  // page.ejs
   const pagesPath = path.join('views', 'page.ejs');
   replaceTextInFile(pagesPath, 'TypeScript and React', projectName);
 
+  // App.tsx
   const appTsxPath = path.join('src', 'client', 'App.tsx');
   removeLineFromFile(appTsxPath, `import { LazyLoadingExample } from './components/LazyLoadingExample';`);
   removeLineFromFile(appTsxPath, `import { RouterExample } from './components/RouterExample';`);
@@ -123,17 +133,34 @@ function changeFiles(projectName) {
   removeLineFromFile(appTsxPath, `<Route path='/styled-example' element={<StyledComponentExample />} />`);
   removeLineFromFile(appTsxPath, `<Route path='/router-example/:slug' element={<RouterExample />} />`);
 
+  // Header.tsx
   const headerTsxPath = path.join('src', 'client', 'components', 'Header.tsx');
   replaceTextInFile(headerTsxPath, 'Fullstack TypeScript', projectName);
 
+  // SideMenu.tsx
+  function removeListItemLink(text) {
+    removeTextFromFileByRegex(sideMenuTsxPath, new RegExp(`<ListItem.*\\s*<ListItemLink.*to='\/${text}'.*\\s*.*<\/ListItem>\\s*`, "g"));
+  }
+
   const sideMenuTsxPath = path.join('src', 'client', 'components', 'SideMenu.tsx');
-  removeTextFromFileByRegex(sideMenuTsxPath, / *<Divider \/>[\s\S]*?<\/List>/);
+  removeListItemLink('usage');
+  removeListItemLink('fetch-example');
+  removeListItemLink('lazy-example');
+  removeListItemLink('styled-example');
+  removeListItemLink('router-example/1234');
+  removeTextFromFileByRegex(sideMenuTsxPath, new RegExp(`.*<List.*\\s*.*<\/List>\\s*`, "g"));
+  removeTextFromFileByRegex(sideMenuTsxPath, new RegExp(`.*<Divider \/>\\s*`, "g"));
+
   removeLineFromFile(sideMenuTsxPath, `import FetchIcon from '@mui/icons-material/CloudDownload';`);
   removeLineFromFile(sideMenuTsxPath, `import UsageIcon from '@mui/icons-material/Code';`);
   removeLineFromFile(sideMenuTsxPath, `import RouterIcon from '@mui/icons-material/Storage';`);
   removeLineFromFile(sideMenuTsxPath, `import StyledIcon from '@mui/icons-material/Style';`);
   removeLineFromFile(sideMenuTsxPath, `import LazyIcon from '@mui/icons-material/SystemUpdateAlt';`);
-  removeTextFromFileByRegex(sideMenuTsxPath, /Divider, /);
+
+  // Home.tsx
+  const homeTsxPath = path.join('src', 'client', 'components', 'Home.tsx');
+  replaceTextInFile(homeTsxPath, 'FullStack React with TypeScript', projectName);
+  replaceTextFromFileByRegex(homeTsxPath, new RegExp(`<CardContent>([\\s\\S]*?)<\/CardContent>`, "g"), "<CardContent><Typography>Your new Project<\/Typography><\/CardContent>");
 }
 
 function removeThisScript() {
