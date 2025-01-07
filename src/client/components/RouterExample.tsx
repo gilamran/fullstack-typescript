@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import React from 'react';
-import { useNavigate , useLocation, useParams } from 'react-router-dom';
+import { useNavigate , useLocation, useParams } from 'react-router';
 
 export const RouterExample: React.FC = () => {
   const navigate = useNavigate();

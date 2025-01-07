@@ -6,7 +6,7 @@ import StyledIcon from '@mui/icons-material/Style';
 import LazyIcon from '@mui/icons-material/SystemUpdateAlt';
 import { Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import React from 'react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router';
 import Toolbar from '@mui/material/Toolbar';
 
 const drawerWidth = 240;
