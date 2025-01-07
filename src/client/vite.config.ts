@@ -8,7 +8,7 @@ export default defineConfig({
       '@shared': path.resolve(__dirname, '../../src/shared'),
     },
   },
-  plugins: [react()],
+  plugins: [react({ babel: { plugins: ['babel-plugin-react-compiler'] } })],
   root: './src/client',
   build: {
     outDir: '../../dist/client',

@@ -55,6 +55,7 @@
     "@typescript-eslint/eslint-plugin": "^6.13.2",
     "@typescript-eslint/parser": "^6.13.2",
     "@vitejs/plugin-react": "^4.3.4",
+    "babel-plugin-react-compiler": "^19.0.0-beta-63e3235-20250105",
     "concurrently": "^9.1.2",
     "core-js": "^3.39.0",
     "cross-env": "^7.0.3",
