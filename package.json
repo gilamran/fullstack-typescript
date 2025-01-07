@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": ">22.12.0"
+    "node": ">=22.12.0"
   },
   "scripts": {
     "clean-up-example-code": "node clean-up-example-code.js && rimraf clean-up-example-code.js",
@@ -76,6 +76,6 @@
     "tsconfig-paths": "^4.2.0",
     "tslib": "^2.8.1",
     "typescript": "^5.7.2",
-    "vite": "^5.4.7"
+    "vite": "^6.0.7"
   }
 }
