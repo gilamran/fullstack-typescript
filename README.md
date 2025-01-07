@@ -48,7 +48,7 @@ git push -u origin master
 
 ## Requirements
 
-- `NodeJs 18.12.+`, `Chrome 79+` or `FireFox 72+`
+- `NodeJs 22.12.+`, `Chrome 79+` or `FireFox 72+`
 
 ### Directory Layout
 
@@ -73,7 +73,7 @@ git push -u origin master
 
 ### What's included
 
-- [React v18](https://facebook.github.io/react/)
+- [React v19](https://facebook.github.io/react/)
 - [React router v6](https://github.com/ReactTraining/react-router)
 - [Material-ui v5](https://github.com/mui-org/material-ui)
 - [emotion](https://emotion.sh/docs/introduction)

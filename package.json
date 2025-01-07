@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": ">18"
+    "node": ">22.12.0"
   },
   "scripts": {
     "clean-up-example-code": "node clean-up-example-code.js && rimraf clean-up-example-code.js",
@@ -49,7 +49,7 @@
     "@mui/icons-material": "^6.3.1",
     "@mui/material": "^6.3.1",
     "@types/express": "^4.17.21",
-    "@types/node": "^20.14.9",
+    "@types/node": "^22.10.5",
     "@types/react": "^19.0.3",
     "@types/react-dom": "^19.0.2",
     "@typescript-eslint/eslint-plugin": "^6.13.2",
