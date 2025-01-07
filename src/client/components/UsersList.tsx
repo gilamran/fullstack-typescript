@@ -4,9 +4,9 @@ import CardHeader from '@mui/material/CardHeader';
 import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import React from 'react';
-import { IUserDTO } from '@shared/IUserDTO';
+import type { IUserDTO } from '@shared/IUserDTO';
 import { getUserFullName } from '@shared/utils';
+import React from 'react';
 import { loadUsersAPI } from '../utils/api-facade';
 
 export const UsersList: React.FC = () => {

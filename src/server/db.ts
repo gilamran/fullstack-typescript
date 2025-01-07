@@ -1,4 +1,4 @@
-import { IUserDTO } from '../shared/IUserDTO';
+import type { IUserDTO } from '../shared/IUserDTO';
 
 export const users: IUserDTO[] = [
   {

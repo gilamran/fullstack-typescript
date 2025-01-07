@@ -11,13 +11,13 @@ import Toolbar from '@mui/material/Toolbar';
 
 const drawerWidth = 240;
 
-interface ListItemLinkProps {
+interface IListItemLinkProps {
   icon?: React.ReactElement<any>;
   primary: string;
   to: string;
 }
 
-function ListItemLink(props: ListItemLinkProps) {
+function ListItemLink(props: IListItemLinkProps) {
   const { icon, primary, to } = props;
 
   return (
