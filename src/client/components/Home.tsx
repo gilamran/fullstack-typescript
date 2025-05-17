@@ -13,7 +13,7 @@ const ImgStyled = styled('img')`
 
 export const Home: React.FC = () => {
   return (
-    <Grid item xs={12}>
+    <Grid size={12}>
       <Card>
         <CardHeader title='FullStack React with TypeScript' />
         <CardContent>

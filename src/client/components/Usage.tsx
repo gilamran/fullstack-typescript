@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import React from 'react';
 
 export const Usage: React.FC = () => (
-  <Grid item xs={12}>
+  <Grid size={12}>
     <Card>
       <CardHeader title='Usage' />
       <CardContent>
