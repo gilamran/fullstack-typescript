@@ -48,7 +48,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^6.3.1",
     "@mui/material": "^6.3.1",
-    "@types/express": "^4.17.21",
+    "@types/express": "^5.0.2",
     "@types/node": "^22.14.1",
     "@types/react": "^19.1.4",
     "@types/react-dom": "^19.1.5",
