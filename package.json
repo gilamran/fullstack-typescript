@@ -41,7 +41,7 @@
     "axios": "^1.12.1",
     "body-parser": "^2.2.1",
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.2.0"
   },
   "devDependencies": {
     "@emotion/react": "^11.14.0",
