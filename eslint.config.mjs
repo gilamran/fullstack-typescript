@@ -1,51 +1,36 @@
-import jsLint from '@eslint/js';
+import js from '@eslint/js';
+import prettier from 'eslint-plugin-prettier/recommended';
 import react from 'eslint-plugin-react';
-import tsLint from 'typescript-eslint';
+import reactHooks from 'eslint-plugin-react-hooks';
+import { defineConfig } from 'eslint/config';
 import globals from 'globals';
-import hooksPlugin from 'eslint-plugin-react-hooks';
+import ts from 'typescript-eslint';
+export default defineConfig(
+  {
+    ignores: ['dist', 'node_modules', 'assets', 'views'],
+  },
 
-export default [
-  // config parsers
+  js.configs.recommended,
+  ts.configs.recommended,
   {
-    files: ['**/*.{js,mjs,cjs,ts,mts,jsx,tsx}'],
-    plugins: {
-      react,
-      'react-hooks': hooksPlugin,
-    },
     languageOptions: {
-      parserOptions: {
-        ecmaFeatures: {
-          jsx: true,
-        },
-      },
       globals: {
-        ...globals.browser,
+        ...globals.node, // For Express server
+        ...globals.builtin,
       },
     },
   },
+
+  // All TypeScript Configuration
   {
-    files: ['*.ts', '**/*.ts'],
-    languageOptions: {
-      parserOptions: {
-        parser: '@typescript-eslint/parser',
-        sourceType: 'module',
-      },
-    },
-  },
-  // rules
-  jsLint.configs.recommended,
-  ...tsLint.configs.recommended,
-  {
+    files: ['**/*.{js,mjs,cjs,ts,tsx}'],
     rules: {
-      'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn',
-      '@typescript-eslint/consistent-type-imports': [
-        'error',
-        {
-          prefer: 'type-imports',
-          fixStyle: 'separate-type-imports',
-        },
-      ],
+      '@typescript-eslint/no-unused-vars': 0,
+      '@typescript-eslint/no-explicit-any': 0,
+      '@typescript-eslint/explicit-function-return-type': 0,
+      '@typescript-eslint/no-empty-function': 0,
+      '@typescript-eslint/no-use-before-define': 0,
+      '@typescript-eslint/no-inferrable-types': 0,
       '@typescript-eslint/naming-convention': [
         'error',
         {
@@ -57,13 +42,52 @@ export default [
           },
         },
       ],
-      'no-var': 0,
-      '@typescript-eslint/no-unused-vars': 0,
-      '@typescript-eslint/no-explicit-any': 0,
-      '@typescript-eslint/explicit-function-return-type': 0,
-      '@typescript-eslint/no-empty-function': 0,
-      '@typescript-eslint/no-use-before-define': 0,
-      '@typescript-eslint/no-inferrable-types': 0,
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          prefer: 'type-imports',
+          fixStyle: 'separate-type-imports',
+        },
+      ],
     },
   },
-];
+
+  // Server Specific Configuration
+  {
+    files: ['src/server/**/*.{ts,tsx}'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+        ...globals.builtin,
+      },
+    },
+  },
+
+  // React Specific Configuration (Only for Client files)
+  {
+    files: ['src/client/**/*.{ts,tsx}'],
+    plugins: {
+      react,
+      'react-hooks': reactHooks,
+    },
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+      },
+    },
+    rules: {
+      ...react.configs.recommended.rules,
+      ...react.configs['jsx-runtime'].rules,
+      ...reactHooks.configs.recommended.rules,
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
+    },
+    settings: {
+      react: {
+        version: '19.2',
+      },
+    },
+  },
+
+  prettier,
+);

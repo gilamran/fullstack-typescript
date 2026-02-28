@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=24.14.0"
   },
   "scripts": {
     "clean-up-example-code": "node clean-up-example-code.js && rimraf clean-up-example-code.js",
@@ -19,8 +19,8 @@
     "fix-server-alias": "tsc-alias -p ./src/server/tsconfig.json",
     "start-dev-server": "yarn fix-server-alias && yarn start",
     "dev-server": "tsc-watch --noClear -b ./src/server/tsconfig.json --onSuccess \"yarn start-dev-server\"",
-    "dev": "concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run dev-server\" \"npm run dev-client\"",
-    "build": "yarn clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"npm run build-server\" \"npm run build-client\""
+    "dev": "concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"yarn dev-server\" \"yarn dev-client\"",
+    "build": "yarn clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"yarn build-server\" \"yarn build-client\""
   },
   "keywords": [
     "typescript",
@@ -38,43 +38,47 @@
   "license": "MIT",
   "author": "Gil Amran",
   "dependencies": {
-    "axios": "^1.12.1",
-    "body-parser": "^2.2.0",
-    "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "axios": "^1.13.6",
+    "body-parser": "^2.2.2",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
   },
   "devDependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^7.3.2",
-    "@mui/material": "^7.3.2",
-    "@types/express": "^5.0.3",
-    "@types/node": "^22.15.29",
-    "@types/react": "^19.1.13",
-    "@types/react-dom": "^19.1.9",
-    "@vitejs/plugin-react": "^5.0.2",
+    "@eslint/eslintrc": "^3.3.4",
+    "@eslint/js": "^10.0.1",
+    "@mui/icons-material": "^7.3.8",
+    "@mui/material": "^7.3.8",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.11.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.4",
     "babel-plugin-react-compiler": "^19.1.0-rc.3",
     "concurrently": "^9.2.1",
-    "core-js": "^3.45.1",
-    "cross-env": "^10.0.0",
-    "dotenv": "^17.2.2",
-    "eslint": "^9.35.0",
+    "core-js": "^3.48.0",
+    "cross-env": "^10.1.0",
+    "dotenv": "^17.3.1",
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "prettier": "^3.6.2",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-refresh": "^0.17.0",
-    "react-router": "^7.9.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "prettier": "^3.8.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-refresh": "^0.18.0",
+    "react-router": "^7.13.1",
     "request": "^2.88.2",
-    "rimraf": "^6.0.1",
+    "rimraf": "^6.1.3",
     "ts-node": "^10.9.2",
     "tsc-alias": "^1.8.16",
-    "tsc-watch": "^7.1.1",
+    "tsc-watch": "^7.2.0",
     "tsconfig-paths": "^4.2.0",
     "tslib": "^2.8.1",
-    "typescript": "^5.9.2",
-    "typescript-eslint": "^8.43.0",
-    "vite": "^7.1.11"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.56.1",
+    "vite": "^7.3.1"
   }
 }

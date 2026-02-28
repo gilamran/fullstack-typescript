@@ -48,7 +48,7 @@ git push -u origin master
 
 ## Requirements
 
-- `NodeJs 22.12.+`, `Chrome 79+` or `FireFox 72+`
+- `NodeJs 24.14.+`, `Chrome 79+` or `FireFox 72+`
 
 ### Directory Layout
 
@@ -61,8 +61,9 @@ git push -u origin master
 │   ├── /server/                      # Express server app
 │   ├── /shared/                      # The shared code between the client and the server
 ├── /assets/                          # images, css, jsons etc.
-├── .eslintrc                         # es-lint configuration
-├── .prettierec                       # prettier configuration
+├── /views/                           # EJS templates for server-rendered pages
+├── eslint.config.mjs                 # ESLint configuration
+├── .prettierrc.json                  # prettier configuration
 ├── .gitignore                        # ignored git files and folders
 ├── .nvmrc                            # Force nodejs version
 ├── .env                              # (ignored) Can be used to override environment variables
@@ -74,8 +75,8 @@ git push -u origin master
 ### What's included
 
 - [React v19](https://facebook.github.io/react/)
-- [React router v6](https://github.com/ReactTraining/react-router)
-- [Material-ui v5](https://github.com/mui-org/material-ui)
+- [React router v7](https://github.com/ReactTraining/react-router)
+- [Material-ui v7](https://github.com/mui-org/material-ui)
 - [emotion](https://emotion.sh/docs/introduction)
 - [Axios](https://github.com/mzabriskie/axios) (For Client/Server communication)
 
@@ -84,8 +85,8 @@ git push -u origin master
 - `yarn dev` - Client and server are in watch mode with source maps, opens [http://localhost:3000](http://localhost:3000)
 - `yarn lint` - Runs es-lint
 - `yarn build` - `dist` folder will include all the needed files, both client (Bundle) and server.
-- `yarn start` - Just runs `node ./dist/server/server.js`
-- `yarn start:prod` - sets `NODE_ENV` to `production` and then runs `node ./dist/server/server.js`. (Bypassing vite)
+- `yarn start` - Just runs `node index.js`
+- `yarn start:prod` - sets `NODE_ENV` to `production` and then runs `node index.js`. (Bypassing vite)
 
 ### Config
 
@@ -100,6 +101,6 @@ All applications require a config mechanism, for example, `SLACK_API_TOKEN`. Thi
 
 ---
 
-#### Licence
+#### License
 
-This code is released as is, under MIT licence. Feel free to use it for free for both commercial and private projects. No warranty provided.
+This code is released as is, under MIT license. Feel free to use it for free for both commercial and private projects. No warranty provided.
