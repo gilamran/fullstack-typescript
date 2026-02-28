@@ -3,7 +3,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardHeader from '@mui/material/CardHeader';
 import React from 'react';
-import { useNavigate , useLocation, useParams } from 'react-router';
+import { useNavigate, useLocation, useParams } from 'react-router';
 
 export const RouterExample: React.FC = () => {
   const navigate = useNavigate();
@@ -18,7 +18,7 @@ export const RouterExample: React.FC = () => {
           location.pathname: <strong>{location.pathname}</strong>
         </Typography>
         <Typography>
-          "slug" parameter: <strong>{slug}</strong>
+          &ldquo;slug&rdquo; parameter: <strong>{slug}</strong>
         </Typography>
         <Button variant='contained' color='primary' onClick={() => navigate(-1)}>
           navigate(-1)

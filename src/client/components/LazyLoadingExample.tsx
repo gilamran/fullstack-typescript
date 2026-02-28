@@ -5,7 +5,7 @@ import React, { lazy, Suspense } from 'react';
 
 const LazilyLoadedContent = lazy(() => import('./LazilyLoadedContent'));
 
-const Spinner = () => (<div>LOADING...</div>);
+const Spinner = () => <div>LOADING...</div>;
 
 export const LazyLoadingExample: React.FC = () => (
   <Card>

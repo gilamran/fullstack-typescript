@@ -11,7 +11,6 @@ import { UsersList } from './components/UsersList';
 import { Home } from './components/Home';
 
 export const App = () => {
-
   return (
     <BrowserRouter>
       <Box sx={{ display: 'flex' }}>

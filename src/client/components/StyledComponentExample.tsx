@@ -18,9 +18,7 @@ export const StyledComponentExample: React.FC = () => (
   <Card>
     <CustomCardHeader title='Styled Component Example' />
     <CardContent>
-      <Typography>
-        This is an example of styled component.
-      </Typography>
+      <Typography>This is an example of styled component.</Typography>
       <CustomButton>Custom button</CustomButton>
     </CardContent>
   </Card>
