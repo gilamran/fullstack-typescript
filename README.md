@@ -76,7 +76,7 @@ git push -u origin master
 
 - [React v19](https://facebook.github.io/react/)
 - [React router v7](https://github.com/ReactTraining/react-router)
-- [Material-ui v7](https://github.com/mui-org/material-ui)
+- [MUI (Material UI) v9](https://github.com/mui/material-ui)
 - [emotion](https://emotion.sh/docs/introduction)
 - [Axios](https://github.com/mzabriskie/axios) (For Client/Server communication)
 
