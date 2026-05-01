@@ -5,19 +5,23 @@ import { pagesRouter } from './routes/pages-router';
 import { staticsRouter } from './routes/statics-router';
 import * as config from './config';
 
-console.log(`*******************************************`);
-console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
-console.log(`config: ${JSON.stringify(config, null, 2)}`);
-console.log(`*******************************************`);
+function bootstrap() {
+  console.log(`*******************************************`);
+  console.log(`NODE_ENV: ${process.env.NODE_ENV}`);
+  console.log(`config: ${JSON.stringify(config, null, 2)}`);
+  console.log(`*******************************************`);
 
-const app = express();
-app.set('view engine', 'ejs');
+  const app = express();
+  app.set('view engine', 'ejs');
 
-app.use('/assets', express.static(path.join(process.cwd(), 'assets')));
-app.use(apiRouter());
-app.use(staticsRouter());
-app.use(pagesRouter());
+  app.use('/assets', express.static(path.join(process.cwd(), 'assets')));
+  app.use(apiRouter());
+  app.use(staticsRouter());
+  app.use(pagesRouter());
 
-app.listen(config.SERVER_PORT, () => {
-  console.log(`App listening on port ${config.SERVER_PORT}!`);
-});
+  app.listen(config.SERVER_PORT, () => {
+    console.log(`App listening on port ${config.SERVER_PORT}!`);
+  });
+}
+
+bootstrap();
