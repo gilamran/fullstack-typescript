@@ -25,7 +25,8 @@ export const Usage: React.FC = () => (
           <strong>npm start</strong> - Runs <strong>node ./dist/server/server.js</strong>
         </Typography>
         <Typography>
-          <strong>npm start:prod</strong> - sets <strong>NODE_ENV</strong> to <strong>production</strong> and then runs <strong>node ./dist/server/server.js</strong>. (Bypassing vite)
+          <strong>npm start:prod</strong> - sets <strong>NODE_ENV</strong> to <strong>production</strong> and then runs{' '}
+          <strong>node ./dist/server/server.js</strong>. (Bypassing vite)
         </Typography>
       </CardContent>
     </Card>

@@ -45,16 +45,18 @@
     "tslib": "^2.8.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.29.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@eslint/js": "^10.0.1",
     "@mui/icons-material": "^7.3.8",
     "@mui/material": "^7.3.8",
+    "@rolldown/plugin-babel": "^0.2.3",
     "@types/express": "^5.0.6",
     "@types/node": "^24.11.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.4",
+    "@vitejs/plugin-react": "^6.0.1",
     "babel-plugin-react-compiler": "^19.1.0-rc.3",
     "concurrently": "^9.2.1",
     "cross-env": "^10.1.0",
@@ -64,6 +66,7 @@
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
+    "globals": "^17.5.0",
     "prettier": "^3.8.3",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
@@ -74,6 +77,6 @@
     "tsc-watch": "^7.2.0",
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.59.1",
-    "vite": "^7.3.2"
+    "vite": "^8.0.10"
   }
 }

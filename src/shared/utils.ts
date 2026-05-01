@@ -1,3 +1,3 @@
-import { IUserDTO } from './IUserDTO';
+import type { IUserDTO } from './IUserDTO';
 
 export const getUserFullName = (user: IUserDTO): string => `${user.firstName} ${user.lastName}`;

@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2020",
     "sourceMap": true,
-    "module": "commonjs",
+    "module": "NodeNext",
     "esModuleInterop": true,
     "declaration": true,
     "resolveJsonModule": true,
@@ -15,7 +15,7 @@
     "outDir": "../../dist",
     "rootDir": "..",
     "lib": ["ES2020"],
-    "moduleResolution": "node",
+    "moduleResolution": "NodeNext",
     "types": ["node"],
     "incremental": true,
     "allowSyntheticDefaultImports": true,
