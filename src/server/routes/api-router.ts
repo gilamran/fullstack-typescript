@@ -1,11 +1,10 @@
-import bodyParser from 'body-parser';
-import { Router } from 'express';
+import express, { Router } from 'express';
 import { users, getUserById } from '../db';
 import { getUserFullName } from '@shared/utils';
 
 export function apiRouter(): Router {
   const router = Router();
-  router.use(bodyParser.json());
+  router.use(express.json());
 
   router.get('/api/users', (req, res) => {
     res.json(users);

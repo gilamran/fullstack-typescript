@@ -3,6 +3,8 @@ import react, { reactCompilerPreset } from '@vitejs/plugin-react';
 import babel from '@rolldown/plugin-babel';
 import path from 'path';
 
+const shouldUseReactCompiler = process.env.REACT_COMPILER === 'true';
+
 export default defineConfig({
   resolve: {
     alias: {
@@ -11,9 +13,13 @@ export default defineConfig({
   },
   plugins: [
     react(),
-    babel({
-      presets: [reactCompilerPreset()],
-    }),
+    ...(shouldUseReactCompiler
+      ? [
+          babel({
+            presets: [reactCompilerPreset()],
+          }),
+        ]
+      : []),
   ],
   root: './src/client',
   server: {
