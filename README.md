@@ -78,7 +78,6 @@ git push -u origin master
 - [React router v7](https://github.com/ReactTraining/react-router)
 - [MUI (Material UI) v9](https://github.com/mui/material-ui)
 - [emotion](https://emotion.sh/docs/introduction)
-- [Axios](https://github.com/mzabriskie/axios) (For Client/Server communication)
 
 ### Usage
 
