@@ -11,7 +11,7 @@ If you're using Github, you can click on the "Use this template" button to creat
 ## Clean example code
 The repo comes with some examples on how to do basic stuff. As this is not really needed in real projects, you can remove them by running:
 ```
-yarn clean-up-example-code
+pnpm clean-up-example-code
 ```
 
 ## Manual clone
@@ -20,8 +20,8 @@ clone this repository into your own project folder. and start working
 ```bash
 git clone https://github.com/gilamran/fullstack-typescript.git <MyProjectName>
 cd <MyProjectName>
-yarn
-yarn dev
+pnpm install
+pnpm dev
 ```
 
 If you want to detach from this repository into your own repository do this:
@@ -81,11 +81,11 @@ git push -u origin master
 
 ### Usage
 
-- `yarn dev` - Client and server are in watch mode with source maps, opens [http://localhost:3000](http://localhost:3000)
-- `yarn lint` - Runs es-lint
-- `yarn build` - `dist` folder will include all the needed files, both client (Bundle) and server.
-- `yarn start` - Just runs `node index.js`
-- `yarn start:prod` - sets `NODE_ENV` to `production` and then runs `node index.js`. (Bypassing vite)
+- `pnpm dev` - Client and server are in watch mode with source maps, opens [http://localhost:3000](http://localhost:3000)
+- `pnpm lint` - Runs es-lint
+- `pnpm build` - `dist` folder will include all the needed files, both client (Bundle) and server.
+- `pnpm start` - Just runs `node index.js`
+- `pnpm start:prod` - sets `NODE_ENV` to `production` and then runs `node index.js`. (Bypassing vite)
 
 ### Config
 

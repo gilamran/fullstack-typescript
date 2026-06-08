@@ -3,6 +3,7 @@
   "version": "2.0.1",
   "description": "",
   "main": "index.js",
+  "packageManager": "pnpm@11.5.2",
   "engines": {
     "node": ">=24.14.0"
   },
@@ -14,13 +15,13 @@
     "start:prod": "cross-env NODE_ENV=production node index.js",
     "type-check-client": "tsc -p ./src/client/tsconfig.json",
     "build-client": "cross-env NODE_ENV=production vite build --config ./src/client/vite.config.ts",
-    "build-server": "tsc -b src/server && yarn fix-server-alias",
+    "build-server": "tsc -b src/server && pnpm run fix-server-alias",
     "dev-client": "vite --config ./src/client/vite.config.ts",
     "fix-server-alias": "tsc-alias -p ./src/server/tsconfig.json",
-    "start-dev-server": "yarn fix-server-alias && yarn start",
-    "dev-server": "tsc-watch --noClear -b ./src/server/tsconfig.json --onSuccess \"yarn start-dev-server\"",
-    "dev": "concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"yarn dev-server\" \"yarn dev-client\"",
-    "build": "yarn clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"yarn build-server\" \"yarn build-client\""
+    "start-dev-server": "pnpm run fix-server-alias && pnpm run start",
+    "dev-server": "tsc-watch --noClear -b ./src/server/tsconfig.json --onSuccess \"pnpm run start-dev-server\"",
+    "dev": "concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"pnpm run dev-server\" \"pnpm run dev-client\"",
+    "build": "pnpm run clean && concurrently --prefix \"[{name}]\" --names \"SERVER,CLIENT\" -c \"bgBlue.bold,bgGreen.bold\" \"pnpm run build-server\" \"pnpm run build-client\""
   },
   "keywords": [
     "typescript",
@@ -49,6 +50,7 @@
     "@eslint/js": "^10.0.1",
     "@mui/icons-material": "^9.0.1",
     "@mui/material": "^9.0.1",
+    "@mui/system": "^9.0.1",
     "@rolldown/plugin-babel": "^0.2.3",
     "@types/express": "^5.0.6",
     "@types/node": "^24.11.0",
