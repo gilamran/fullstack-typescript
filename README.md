@@ -87,6 +87,16 @@ git push -u origin master
 - `pnpm start` - Just runs `node index.js`
 - `pnpm start:prod` - sets `NODE_ENV` to `production` and then runs `node index.js`. (Bypassing vite)
 
+### Ports in dev
+
+In dev, port `3000` (the express server) is the **single origin** for everything: the HTML page, the API, and the client modules. The vite dev server runs on `5173` but stays **loopback only** — express proxies it under the `/vite-dev` prefix (including the HMR websocket), so the browser never talks to `5173` directly.
+
+That means the app is reachable from other devices on your network at `http://<machine-ip>:3000` (as long as your OS firewall allows inbound connections on port `3000`).
+
+The prefix is defined in two places that must stay in sync: `VITE_DEV_BASE` in [src/server/config.ts](src/server/config.ts) and `base` in [src/client/vite.config.ts](src/client/vite.config.ts).
+
+None of this applies to production, where the client is a static bundle served by express.
+
 ### Config
 
 All applications require a config mechanism, for example, `SLACK_API_TOKEN`. Things that you don't want in your git history, you want a different environment to have different value (dev/staging/production). This repo uses the file `config.ts` to access all your app variables. And a `.env` file to override variable in dev environment. This file is ignored from git.

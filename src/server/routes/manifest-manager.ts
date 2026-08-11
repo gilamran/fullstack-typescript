@@ -1,19 +1,19 @@
 import fs from 'fs';
 import path from 'path';
-import { IS_DEV } from '../config';
+import { IS_DEV, VITE_DEV_BASE } from '../config';
 
 let manifestCache: any;
 
 export async function getManifest() {
   if (!manifestCache) {
     if (IS_DEV) {
-      // load from vite dev server
+      // load from the vite dev server, through this server's proxy (same origin)
       manifestCache = {
         '@vite/client': {
-          file: 'http://localhost:5173/@vite/client',
+          file: `${VITE_DEV_BASE}/@vite/client`,
         },
         'client.tsx': {
-          file: 'http://localhost:5173/client.tsx',
+          file: `${VITE_DEV_BASE}/client.tsx`,
         },
       };
     } else {
